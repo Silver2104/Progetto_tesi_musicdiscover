@@ -9,15 +9,24 @@ const link_html = "https://noveller.bandcamp.com/track/rune";
 var dest = "canzone.mp3";
 //Fine Costanti di debug
 
-router.route("/").get((req, res) => {
-  res.send("sto nella pagina download");
-  // Inizio promessa per prendere pagina html
-  get_page(link_html)
-    //Una volta preso il testo della pagina cerco con le espressioni regolari i link di download
-    .then((testo_pagina) => {
-      download_canzone(testo_pagina, dest);
-    });
-});
+router
+  .route("/")
+  .get((req, res) => {
+    res.send("download di debug");
+    get_page(link_html)
+      //Una volta preso il testo della pagina cerco con le espressioni regolari i link di download
+      .then((testo_pagina) => {
+        download_canzone(testo_pagina, dest);
+      });
+  })
+  .post((req, res) => {
+    res.send("download tramite link da POST");
+    get_page(req.body.linkdownload)
+      //Una volta preso il testo della pagina cerco con le espressioni regolari i link di download
+      .then((testo_pagina) => {
+        download_canzone(testo_pagina, dest);
+      });
+  });
 
 //Funzione per prendere l'html di una pagina
 const get_page = (link) => {
