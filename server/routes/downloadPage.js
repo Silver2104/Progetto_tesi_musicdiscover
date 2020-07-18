@@ -21,7 +21,7 @@ router
   })
   .post((req, res) => {
     res.send("download tramite link da POST");
-    get_page(req.body.linkdownload)
+    get_page(req.body.download_link)
       //Una volta preso il testo della pagina cerco con le espressioni regolari i link di download
       .then((testo_pagina) => {
         download_canzone(testo_pagina, dest);

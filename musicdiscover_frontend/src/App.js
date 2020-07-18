@@ -9,10 +9,12 @@ import DownloadForm from "./components/download-form.component";
 function App() {
   return (
     <Router>
-      <Navbar />
-      <br />
-      <Route path="/" exact component={HomePage} />
-      <Route path="/download" component={DownloadForm} />
+      <div className="container">
+        <Navbar />
+        <br />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/download" component={DownloadForm} />
+      </div>
     </Router>
   );
 }
