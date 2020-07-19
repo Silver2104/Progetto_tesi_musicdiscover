@@ -20,7 +20,6 @@ export default class HomePage extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log("TEST");
     const link = {
       download_link: this.state.link_download,
     };

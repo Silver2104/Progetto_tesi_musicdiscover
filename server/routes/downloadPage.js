@@ -3,6 +3,7 @@ const got = require("got"); // Per utilizzare il paradigma REST
 const fs = require("fs"); // File System library
 const { promisify } = require("util"); // Per fare in modo che la pipeline sia eseguita in modo lineare e non parallelo ad altro
 const stream = require("stream"); //Per creare stream di download
+const { bandcamp_getinfo } = require("../functions/bandcamp_functions");
 
 //Costanti di debug ------------- PRENDERE QUESTE VARIABILI FRAMITE FORM NEL FRONT END --------------
 const link_html = "https://noveller.bandcamp.com/track/rune";
@@ -20,11 +21,17 @@ router
       });
   })
   .post((req, res) => {
-    res.send("download tramite link da POST");
     get_page(req.body.download_link)
       //Una volta preso il testo della pagina cerco con le espressioni regolari i link di download
       .then((testo_pagina) => {
         download_canzone(testo_pagina, dest);
+        const info_bandcamp = bandcamp_getinfo(testo_pagina).then(
+          (info_bandcamp) => {
+            console.log("SONO DENTRO DOWNLOADPAGE.JS");
+            console.log(info_bandcamp);
+            res.send(info_bandcamp);
+          }
+        );
       });
   });
 
