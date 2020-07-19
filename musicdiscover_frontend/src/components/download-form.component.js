@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import BandcampDiv from "./bandcamp_div.component";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export default class HomePage extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
       link_download: "",
+      bandcamp_info: {},
     };
   }
 
@@ -26,9 +28,12 @@ export default class HomePage extends Component {
 
     console.log(this.state.link_download);
 
-    axios
-      .post("http://localhost:3001/download/", link)
-      .then((res) => console.log(res.data));
+    axios.post("http://localhost:3001/download/", link).then((res) => {
+      console.log(res.data);
+      this.setState({
+        bandcamp_info: res.data,
+      });
+    });
 
     this.setState({
       download_link: "",
@@ -52,6 +57,7 @@ export default class HomePage extends Component {
             Submit
           </button>
         </form>
+        <BandcampDiv bandcamp_info={this.state.bandcamp_info} />
       </div>
     );
   }

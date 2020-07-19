@@ -32,11 +32,19 @@ const bandcamp_getinfo = (testo_pagina) => {
         );
         const link_album = response.body.matchAll(pattern_link_album);
         for (const match of link_album) {
+          let stringa = "";
+          if (match[2].includes("data-original")) {
+            stringa = match[2].substring(
+              match[2].indexOf("data-original") + 15,
+              match[2].length - 1
+            );
+          } else {
+            stringa = match[2];
+          }
           const album = {
-            //https://noveller.bandcamp.com/album/the-thing
             link_album:
               "https://" + info.band_name + ".bandcamp.com" + match[1],
-            foto_album: match[2],
+            foto_album: stringa,
             nome_album: match[3],
           };
           //Aggiungo informazioni nell'array album di info
