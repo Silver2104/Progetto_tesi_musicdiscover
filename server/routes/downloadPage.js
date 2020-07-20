@@ -27,8 +27,6 @@ router
         download_canzone(testo_pagina, dest);
         const info_bandcamp = bandcamp_getinfo(testo_pagina).then(
           (info_bandcamp) => {
-            console.log("SONO DENTRO DOWNLOADPAGE.JS");
-            console.log(info_bandcamp);
             res.send(info_bandcamp);
           }
         );
@@ -65,7 +63,6 @@ const download_canzone = (source, dest) => {
   var arrMatches = source.match(rePattern);
   //Scarico la canzone
   (async () => {
-    console.log(arrMatches[1]); //------------- LOG DI CONTROLLO ELIMINARE -----------------
     await pipeline(got.stream(arrMatches[1]), fs.createWriteStream(dest));
   })();
 };

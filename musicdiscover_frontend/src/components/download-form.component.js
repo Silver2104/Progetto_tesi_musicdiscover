@@ -8,9 +8,12 @@ export default class HomePage extends Component {
 
     this.onChangeLink_download = this.onChangeLink_download.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.hideComponent = this.hideComponent.bind(this);
+
     this.state = {
       link_download: "",
       bandcamp_info: {},
+      isShowBandcampDiv: false,
     };
   }
 
@@ -18,6 +21,10 @@ export default class HomePage extends Component {
     this.setState({
       link_download: e.target.value,
     });
+  }
+
+  hideComponent() {
+    this.setState({ isShowBandcampDiv: !this.state.isShowBandcampDiv });
   }
 
   onSubmit(e) {
@@ -41,8 +48,9 @@ export default class HomePage extends Component {
   }
 
   render() {
+    const { isShowBandcampDiv } = this.state;
     return (
-      <div style={{ width: "50%" }}>
+      <div>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Link bandcamp</label>
@@ -57,7 +65,14 @@ export default class HomePage extends Component {
             Submit
           </button>
         </form>
-        <BandcampDiv bandcamp_info={this.state.bandcamp_info} />
+        <div id="div_bandcamp_info">
+          <button onClick={() => this.hideComponent()}>
+            Show bandcamp information
+          </button>
+          {isShowBandcampDiv && (
+            <BandcampDiv bandcamp_info={this.state.bandcamp_info} />
+          )}
+        </div>
       </div>
     );
   }
