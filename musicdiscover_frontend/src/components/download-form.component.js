@@ -32,16 +32,11 @@ export default class HomePage extends Component {
     const link = {
       download_link: this.state.link_download,
     };
-
-    console.log(this.state.link_download);
-
     axios.post("http://localhost:3001/download/", link).then((res) => {
-      console.log(res.data);
       this.setState({
         bandcamp_info: res.data,
       });
     });
-
     this.setState({
       download_link: "",
     });
