@@ -62,18 +62,12 @@ export class Album extends Component {
                       id={`dropdown-button-drop-${direction}`}
                       drop={direction}
                       variant="secondary"
-                      title={` Drop ${direction} `}
+                      title={"Songs"}
                       onSelect={this.onSelect}
                     >
                       <ListaCanzoni album={this.props.album} />
                     </DropdownButton>
                   ))}
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                  >
-                    Download Album
-                  </button>
                 </div>
               </div>
             </div>

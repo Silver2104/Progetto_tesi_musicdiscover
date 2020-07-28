@@ -6,7 +6,6 @@ const stream = require("stream"); //Per creare stream di download
 const { bandcamp_getinfo } = require("../functions/bandcamp_functions");
 
 //Costanti di debug ------------- PRENDERE QUESTE VARIABILI FRAMITE FORM NEL FRONT END --------------
-const link_html = "https://noveller.bandcamp.com/track/rune";
 const dest = "canzone.mp3";
 //Fine Costanti di debug
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import BandcampDiv from "./bandcamp_div.component";
 
-export default class HomePage extends Component {
+export default class BandCampPage extends Component {
   constructor(props) {
     super(props);
 

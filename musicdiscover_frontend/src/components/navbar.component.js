@@ -27,8 +27,13 @@ export default class Navbar extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/download">
-                Download
+              <Link className="nav-link" to="/Bandcamp">
+                Bandcamp
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Lastfm">
+                Lastfm
               </Link>
             </li>
           </ul>

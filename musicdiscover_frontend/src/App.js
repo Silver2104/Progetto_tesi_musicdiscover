@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/navbar.component";
 import HomePage from "./components/home-page.component";
 import DownloadForm from "./components/download-form.component";
+import Lastfm_page from "./components/lastfm_page.component";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Navbar />
         <br />
         <Route path="/" exact component={HomePage} />
-        <Route path="/download" component={DownloadForm} />
+        <Route path="/Bandcamp" component={DownloadForm} />
+        <Route path="/Lastfm" component={Lastfm_page} />
       </div>
     </Router>
   );
