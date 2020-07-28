@@ -1,11 +1,12 @@
 const got = require("got"); // Per utilizzare il paradigma REST
+const keys = require("./keys");
 
 function get_top_tracks(artist) {
   return new Promise((resolve, reject) => {
     (async () => {
       try {
         const response = await got(
-          `http://ws.audioscrobbler.com/2.0/?method=artist.getTopTracks&artist=${artist}&limit=5&api_key=53b679c0a1ca7d707ac8682fc328fbe4&format=json`
+          `http://ws.audioscrobbler.com/2.0/?method=artist.getTopTracks&artist=${artist}&limit=5&api_key=${keys.LASTFM_KEY}&format=json`
         );
         if (response != null) {
           resolve(response.body);
@@ -24,7 +25,7 @@ function get_top_albums(artist) {
     (async () => {
       try {
         const response = await got(
-          `http://ws.audioscrobbler.com/2.0/?method=artist.getTopAlbums&artist=${artist}&limit=5&api_key=53b679c0a1ca7d707ac8682fc328fbe4&format=json`
+          `http://ws.audioscrobbler.com/2.0/?method=artist.getTopAlbums&artist=${artist}&limit=5&api_key=${keys.LASTFM_KEY}&format=json`
         );
         if (response != null) {
           resolve(response.body);
@@ -43,7 +44,7 @@ function get_info(artist) {
     (async () => {
       try {
         const response = await got(
-          `http://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=${artist}&api_key=53b679c0a1ca7d707ac8682fc328fbe4&format=json`
+          `http://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=${artist}&api_key=${keys.LASTFM_KEY}&format=json`
         );
         if (response != null) {
           resolve(response.body);
