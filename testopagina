@@ -1,0 +1,5305 @@
+
+
+
+
+
+
+<!doctype html>
+<html
+    lang="en"
+    class="
+        no-js
+        playbar-masthead-release-shim
+        youtube-provider-not-ready
+    "
+>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwYPV15QGwYFXFlXDgU=",licenseKey:"0ed0ce50b0",applicationID:"5588594"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(21),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(22),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),c.xhrWrappable&&t(10),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(9),s=t(8),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=y.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,y.now()])}),a.on(m,function(t,n,e){this.bstStart=y.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){function r(t,n,e){var r=t[n];"function"==typeof r&&(t[n]=function(){var t=i(arguments),n={};o.emit(e+"before-start",[t],n);var a;n[m]&&n[m].dt&&(a=n[m].dt);var s=r.apply(this,t);return o.emit(e+"start",[t,a],s),s.then(function(t){return o.emit(e+"end",[null,t],s),t},function(t){throw o.emit(e+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(22),a=t(21);n.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,n){r(d[h],n,f),r(l[h],n,f)}),r(s,"fetch",c),o.on(c+"end",function(t,n){var e=this;if(n){var r=n.headers.get("content-length");null!==r&&(e.rxSize=r),o.emit(c+"done",[null,n],e)}else o.emit(c+"done",[t],e)}))},{}],7:[function(t,n,e){var r=t("ee").get("history"),o=t("wrap-function")(r);n.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,n,e){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],9:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],10:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,n,e){function r(t){if(!i(t))return null;var n=window.NREUM;if(!n.loader_config)return null;var e=(n.loader_config.accountID||"").toString()||null,r=(n.loader_config.agentID||"").toString()||null,s=(n.loader_config.trustKey||"").toString()||null;if(!e||!r)return null;var c=a.generateCatId(),f=a.generateCatId(),u=Date.now(),d=o(c,f,u,e,r,s);return{header:d,guid:c,traceId:f,timestamp:u}}function o(t,n,e,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:n,ti:e}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function i(t){var n=!1,e=!1,r={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(r=NREUM.init.distributed_tracing,e=!!r.enabled),e)if(t.sameOrigin)n=!0;else if(r.allowed_origins instanceof Array)for(var o=0;o<r.allowed_origins.length;o++){var i=s(r.allowed_origins[o]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){n=!0;break}}return e&&n}var a=t(19),s=t(13);n.exports={generateTracePayload:r,shouldGenerateTrace:i}},{}],12:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);n.aborted||(e.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):i(this,t),e.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime]))}}function o(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.parsedOrigin=c(n),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,n){t.params.status=n.status;var e=w(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){i(n,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=f(this.parsedOrigin);e&&e.header&&(n.setRequestHeader("newrelic",e.header),this.dt=e)}),u.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=m(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<l;s++)n.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),u.on("xhr-load-added",function(t,n){var e=""+p(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,n){var e=""+p(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],n)}),u.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],n)}),u.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,n){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)}),u.on("fetch-before-start",function(t){var n,e=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var r=f(this.parsedOrigin);if(r&&r.header){var o=r.header;if("string"==typeof t[0]){var i={};for(var a in e)i[a]=e[a];i.headers=new Headers(e.headers||{}),i.headers.set("newrelic",o),this.dt=r,t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&(t[0].headers.append("newrelic",o),this.dt=r)}})}},{}],13:[function(t,n,e){var r={};n.exports=function(t){if(t in r)return r[t];var n=document.createElement("a"),e=window.location,o={};n.href=t,o.port=n.port;var i=n.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=n.hostname||e.hostname,o.pathname=n.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!n.protocol||":"===n.protocol||n.protocol===e.protocol,s=n.hostname===document.domain&&n.port===e.port;return o.sameOrigin=a&&(!n.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],14:[function(t,n,e){function r(t,n){var e=t.responseType;return"json"===e&&null!==n?n:"arraybuffer"===e||"blob"===e||"json"===e?o(t.response):"text"===e||""===e||void 0===e?o(t.responseText):void 0}var o=t(16);n.exports=r},{}],15:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(21),s=t(22),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],16:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],17:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],18:[function(t,n,e){function r(t,n){var e=t.getEntries();e.forEach(function(t){"first-paint"===t.name?c("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&c("timing",["fcp",Math.floor(t.startTime)])})}function o(t,n){var e=t.getEntries();e.length>0&&c("lcp",[e[e.length-1]])}function i(t){if(t instanceof u&&!l){var n,e=Math.round(t.timeStamp);n=e>1e12?Date.now()-e:f.now()-e,l=!0,c("timing",["fi",e,{type:t.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,s,c=t("handle"),f=t("loader"),u=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),s=new PerformanceObserver(o);try{a.observe({entryTypes:["paint"]}),s.observe({entryTypes:["largest-contentful-paint"]})}catch(d){}}if("addEventListener"in document){var l=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(t){document.addEventListener(t,i,!1)})}}},{}],19:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],20:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],21:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],22:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],23:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){g[t]=m(t).concat(n)}function h(t,n){var e=g[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(21),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(21),u=t("ee"),d=t(20),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(15),t(18),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(23)},{}],"wrap-function":[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(22),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}]},{},["loader",2,12,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"0ed0ce50b0","applicationID":"5588594","transactionName":"Y1BRbUUFWkMEWxYMV1oadUxZB0BZClZNCV5ZG0RcVUpDRxIWFAxdQ0YdW1YXUQokXwUXXVNUR1ZFIlFEBlA0DF1DG1RcQw==","queueTime":0,"applicationTime":197,"agent":""}</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title aria-live="assertive">
+    Noveller Photos
+ | Last.fm</title>
+
+        
+    <link rel="canonical" href="https://www.last.fm/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="en" href="https://www.last.fm/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="de" href="https://www.last.fm/de/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="es" href="https://www.last.fm/es/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="fr" href="https://www.last.fm/fr/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="it" href="https://www.last.fm/it/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="ja" href="https://www.last.fm/ja/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="pl" href="https://www.last.fm/pl/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="pt" href="https://www.last.fm/pt/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="ru" href="https://www.last.fm/ru/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="sv" href="https://www.last.fm/sv/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="tr" href="https://www.last.fm/tr/music/Noveller/+images" data-replaceable-head-tag />
+    
+        <link rel="alternate" hreflang="zh" href="https://www.last.fm/zh/music/Noveller/+images" data-replaceable-head-tag />
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.last.fm/music/Noveller/+images" data-replaceable-head-tag />
+
+
+        
+            
+                
+                
+                
+    <meta name="description" content="See the latest images for Noveller. Listen to Noveller tracks for free online and get recommendations on similar music." data-replaceable-head-tag>
+
+    <meta property="og:title"           content="
+    Noveller Photos
+ | Last.fm" data-replaceable-head-tag>
+    <meta property="og:description"     content="See the latest images for Noveller. Listen to Noveller tracks for free online and get recommendations on similar music." data-replaceable-head-tag>
+    <meta property="og:type"            content="website" data-replaceable-head-tag>
+    <meta property="og:site_name"       content="Last.fm" data-replaceable-head-tag>
+    <meta property="og:url"             content="https://www.last.fm/music/Noveller/+images" data-replaceable-head-tag />
+    <meta property="og:image"           content="https://lastfm.freetls.fastly.net/i/u/ar0/af850594aac743b2c3c0f2807ce3dc41.jpg" data-replaceable-head-tag>
+    <meta property="og:image:width"     content="1200" data-replaceable-head-tag>
+    <meta property="og:image:height"    content="630" data-replaceable-head-tag>
+
+    <meta name="twitter:title"          content="
+    Noveller Photos
+ | Last.fm" data-replaceable-head-tag>
+    <meta name="twitter:description"    content="See the latest images for Noveller. Listen to Noveller tracks for free online and get recommendations on similar music." data-replaceable-head-tag>
+    <meta name="twitter:image"          content="https://lastfm.freetls.fastly.net/i/u/ar0/af850594aac743b2c3c0f2807ce3dc41.jpg" data-replaceable-head-tag>
+    <meta name="twitter:card"           content="summary" data-replaceable-head-tag>
+    <meta name="twitter:site"           content="@lastfm" data-replaceable-head-tag>
+
+    <link rel="apple-music-app-icon" href="https://www.last.fm/static/images/lastfm_avatar_applemusic.b06eb8ad89be.png" />
+    <link rel="apple-touch-icon-precomposed" href="https://www.last.fm/static/images/lastfm_avatar_applemusic.b06eb8ad89be.png" />
+    <link rel="apple-touch-icon" href="https://www.last.fm/static/images/lastfm_avatar_applemusic.b06eb8ad89be.png" />
+
+    
+
+            
+        
+
+        
+
+        <script>(function(e) { e.className = e.className.replace(/\bno-js\b/,'js'); })(document.documentElement)</script>
+
+        
+
+        
+            
+<script
+    id="initial-tealium-data"
+    data-tealium-data="{&#34;siteSection&#34;: &#34;music&#34;, &#34;pageType&#34;: &#34;image_gallery_list&#34;, &#34;pageName&#34;: &#34;music/artist/images/overview&#34;, &#34;nativeEventTracking&#34;: true, &#34;userState&#34;: &#34;not authenticated&#34;, &#34;userType&#34;: &#34;anon&#34;, &#34;deviceType&#34;: &#34;desktop&#34;, &#34;musicArtistName&#34;: &#34;Noveller&#34;, &#34;artist&#34;: &#34;noveller&#34;, &#34;ar&#34;: &#34;noveller,christinavantzou,simonscott,sarahdavachi,juliannabarwick&#34;, &#34;tag&#34;: &#34;ambient,drone,experimental,noise,minimal&#34;, &#34;ipGeo&#34;: &#34;IT&#34;, &#34;pageViewGuid&#34;: &#34;23267adf-30ab-4a48-a0ba-59ab14b08f7c&#34;}"
+    data-tealium-environment="prod"
+></script>
+<script>
+    var initialTealiumElement = document.getElementById('initial-tealium-data');
+    window.utag_data = JSON.parse(initialTealiumElement.getAttribute('data-tealium-data'));
+</script>
+        
+
+        <link rel="icon" href="/static/images/favicon.702b239b6194.ico">
+
+        <link rel="stylesheet" href="/static/styles/build/91ae0140fc.91ae0140fc0e.css" data-stylesheet-name="defaults" charset="utf-8">
+
+        
+            <link rel="stylesheet" href="/static/styles/build/ef759ef0ac.ef759ef0aceb.css" data-stylesheet-name="app" charset="utf-8">
+        
+
+        
+    
+    
+        <link rel="stylesheet" href="/static/styles/build/1b51bc6b58.1b51bc6b58bb.css" data-stylesheet-name="page-specific" charset="utf-8">
+    
+
+    
+        <link rel="stylesheet" href="/static/styles/build/b1336cdc9c.b1336cdc9cf1.css" data-stylesheet-name="page-specific" charset="utf-8">
+    
+
+
+        <script
+            src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+            
+                data-domain-script="d9f750da-0271-4142-9b0e-43d9a3b334d1"
+            
+        ></script>
+
+        
+            
+    
+    
+        <script async data-main="/static/js-build/init.dd527cfeb319" src="/static/js-build/lib/require/require.53bc64c729e9.js"></script>
+    
+
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body
+        class="
+            
+    catalogue-subpage
+
+            anhv2
+            namespace--music_artist_images_overview
+            
+        "
+        data-require="ads/page-ads,ads/searchlinks,player/playlink-handler,dev/grid-overlay,dev/toggle-version,dev/debug-log,dev/debug-image-analysis,dev/js-log,dev/ads-toggle,components/link-block,components/ajax-form,core/media-size-events-v2"
+        data-player-supported="true"
+        data-country-code="IT"
+        data-initial-view-guid="23267adf-30ab-4a48-a0ba-59ab14b08f7c"data-cbsi-player-config="/static/config/video-player.015786d691c2.xml"data-sensitive-path-regex="^/(../)?(googlec3ea1b252774e1ab\.html|account_deleted|inbox|join|login|lostpassword(/confirm)?|staff|subscribe|support(?!/images|/shouts|/shout)|settings/(account|website|subscription|password|lostpassword)|user/.+?/support)(/.*)?/?$"
+        data-facebook-placement-id="195612451022080_220502155199776"
+        data-google-maps-api-key="AIzaSyBX6-IE3lz4PpJUSBVIo_dPb0BAyMgi-VE"
+        
+            data-onetrust-prod
+        
+    >
+        <div
+            data-require="components/loading-indicator"
+            data-loading-indicator-copy="Loading…"
+        ></div>
+        <div
+            data-require="components/open-modal,components/submit-to-modal,components/show-alert"
+            data-show-alert-ok-copy="Okay"
+        ></div>
+        
+
+    
+        <div class="top-bar">
+            
+                
+                    
+    <section
+        data-require="player/controls,player/status,player/tracking"
+        data-player-status-ad-playing="Ad playing"
+        data-player-status-inactive="&nbsp;"
+        data-player-status-loading-spotify="Connecting Spotify…"
+        data-player-status-spotify-auth-error="Could not authenticate with Spotify."
+
+        data-player-error-cannot-play-item="Cannot play that item."
+        data-player-error-track-unavailable="Track unavailable."
+        data-player-modal-title="Play video"
+
+        
+
+        class="
+            player-bar
+            inactive
+        "
+        aria-label="audio player"
+        aria-disabled="true"
+    >
+        <div class="player-bar-inner-wrap">
+            <a class="player-bar-artwork js-artwork">
+                <img class="" src="/static/images/defaults/player_default_album.430223706b14.png" alt="" />
+            </a>
+
+            <span class="
+                player-bar-source
+                player-bar-source--spotify
+            ">Playing via Spotify</span>
+
+            <span class="
+                player-bar-source
+                player-bar-source--youtube
+            ">Playing via YouTube</span>
+
+            <div class="source-info">
+                <button
+                    class="player-bar-playback-options-button"
+                    data-disclose-hover
+                    aria-controls="player-bar-playback-options"
+                >
+                    Playback options
+                </button>
+                <div
+                    id="player-bar-playback-options"
+                    class="
+                        player-bar-playback-options-wrap
+                        disclose-hide
+                    "
+                >
+                    <ul class="
+                        dropdown-menu-dark
+                        player-bar-playback-options-spotify
+                    ">
+                        <li class="dropdown-menu-non-interactive-item-dark">
+                            <span class="player-bar-listening-on-heading">Listening on…</span>
+                            <span class="
+                                player-bar-listening-on
+                                js-player-bar-listening-on
+                            "></span>
+                        </li>
+                        <li><button class="
+                            dropdown-menu-item-dark
+                            js-switch-device
+                            player-bar-playback-options-switch-device
+                        ">Switch Spotify device</button></li>
+                        <li><a
+                            class="
+                                js-source
+                                dropdown-menu-item-dark
+                                player-bar-playback-options-external-link
+                            "
+                            target="_blank"
+                        >Open in Spotify Web Player</a></li>
+                        
+    <li class="menu-separator--dark">
+        <a
+            
+                href="https://secure.last.fm/login?next=/settings/website"
+            
+            class="
+                dropdown-menu-item-dark
+                player-bar-playback-options-settings
+            "
+        >
+            Change playback source
+        </a>
+    </li>
+
+                    </ul>
+                    <ul class="
+                        dropdown-menu-dark
+                        player-bar-playback-options-youtube
+                    ">
+                        <li><a
+                            class="
+                                dropdown-menu-item-dark
+                                js-source
+                                player-bar-playback-options-external-link
+                            "
+                            target="_blank"
+                        >Open on YouTube website</a></li>
+                        
+    <li class="menu-separator--dark">
+        <a
+            
+                href="https://secure.last.fm/login?next=/settings/website"
+            
+            class="
+                dropdown-menu-item-dark
+                player-bar-playback-options-settings
+            "
+        >
+            Change playback source
+        </a>
+    </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            
+
+            <div class="player-bar-controls">
+
+                <ul aria-label="controls" class="media-controls">
+                    <li>
+                        <button
+                            disabled
+                            class="
+                                js-previous
+                                player-bar-btn
+                                player-bar-btn--previous
+                            "
+                            data-analytics-action="PlaybarBackTrack"
+                        >
+                            Previous
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            disabled
+                            class="
+                                js-play-pause
+                                player-bar-btn
+                                player-bar-btn--play
+                            "
+                            data-string-pause="Pause"
+                            data-analytics-action="PlaybarResumeTrack"
+                            data-analytics-action-pause="PlaybarPauseTrack"
+                        >
+                            Play
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            disabled
+                            class="
+                                js-next
+                                player-bar-btn
+                                player-bar-btn--next
+                            "
+                            data-analytics-action="PlaybarSkipTrack"
+                        >
+                            Next
+                        </button>
+                    </li>
+                    
+                </ul>
+
+                <a class="
+                        player-bar-skiplink
+                        player-bar-skiplink--youtube
+                    "
+                    href="#youtube-video"
+                >Skip to YouTube video</a>
+
+            </div>
+
+            <div class="player-bar-now-playing">
+                <div class="player-bar-now-playing-inner-wrap">
+                    <p
+                        class="player-bar-track js-player-status"
+                        aria-label="now playing"
+                        aria-live="polite"
+                        aria-atomic="true"
+                    >
+                        Loading player…
+                    </p>
+
+                    <p class="player-bar-error js-player-error player-bar-status--hide">
+                        <span class="player-bar-error-message js-player-error-message"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="player-bar-progress-wrap">
+            <div
+                class="player-bar-progress"
+                aria-label="progress"
+                role="timer"
+            >
+                <div
+                    class="
+                        js-progress-slug
+                        player-bar-progress-slug
+                    "
+                >
+                    <span
+                        class="
+                            js-progress-remaining
+                            player-bar-progress-remaining
+                        "
+                        aria-label="remaining"
+                    ></span>
+                </div>
+            </div>
+        </div>
+
+        <div data-require="player/scrobble-client"></div>
+    </section>
+
+                    
+    <div
+        class="
+            masthead-popup
+            masthead-popup--spotify-scrobbling
+            masthead-popup--hidden
+        "
+        data-require="components/spotify-scrobbling-prompt,components/alert-dismissable,components/spotify-scrobbling-banner"
+        data-spotify-scobbling-success-modal="/socialmodal/spotify-scrobbling-success"
+        data-spotify-scobbling-fail-modal="/socialmodal/spotify-scrobbling-fail"
+    >
+        <div class="masthead-popup-inner">
+            <h3>Scrobble from Spotify?</h3>
+            <p>Connect your Spotify account to your Last.fm account and scrobble everything you listen to, from any Spotify app on any device or platform.</p>
+            <p>
+                <a
+                    class="btn-primary js-setup-spotify-scrobbling"
+                    href="/settings/applications"
+                >
+                    Connect to Spotify
+                </a>
+            </p>
+            <a
+                href="/nagbar/dismiss/spotify-scrobbling-prompt?period=permanent"
+                class="masthead-popup-close js-alert-dismissable-close"
+                data-close-ajax
+            >
+                Dismiss
+            </a>
+        </div>
+    </div>
+
+                
+            
+        </div>
+    
+
+    <div id="content" class="main-content" role="main" aria-live="polite">
+        
+    
+
+    <div id="tlmdata" hidden class="hidden"
+         data-tealium-data='{&#34;siteSection&#34;: &#34;music&#34;, &#34;pageType&#34;: &#34;image_gallery_list&#34;, &#34;pageName&#34;: &#34;music/artist/images/overview&#34;, &#34;nativeEventTracking&#34;: true, &#34;userState&#34;: &#34;not authenticated&#34;, &#34;userType&#34;: &#34;anon&#34;, &#34;deviceType&#34;: &#34;desktop&#34;, &#34;musicArtistName&#34;: &#34;Noveller&#34;, &#34;artist&#34;: &#34;noveller&#34;, &#34;ar&#34;: &#34;noveller,christinavantzou,simonscott,sarahdavachi,juliannabarwick&#34;, &#34;tag&#34;: &#34;ambient,drone,experimental,noise,minimal&#34;, &#34;ipGeo&#34;: &#34;IT&#34;}'>
+     </div>
+
+        <div
+            
+                
+            
+            
+    data-page-resource-type="artist"
+    data-page-resource-name="Noveller"
+    
+    data-page-resource-blacklist-level=""
+
+            >
+            
+    <div
+        data-require="components/disclose-base,components/disclose-autoclose-v2,components/disclose-dropdown-v2,components/disclose-dropdown-location-picker-v2,components/disclose-collapsing-nav-v2,components/disclose-artwork,components/disclose-remove,components/disclose-search,components/disclose-hover-v3,components/disclose-select,components/disclose-lazy-buylinks,components/focus-controls,components/prevent-resubmit-v2,components/edit-scrobble,components/toggle-buttons,components/click-proxy,components/bookmark-notification"
+    ></div>
+
+    
+        
+
+    <nav class="masthead"><div class="masthead-inner-wrap"><div class="masthead-logo"><span class="masthead-logo-loading"></span><a href="/"> Last.fm</a></div><a
+        class="masthead-search-toggle" href="/search" data-disclose-search aria-controls="masthead-search">Search</a><form
+        class=" masthead-search-form disclose-hide disclose-hide--js-only " id="masthead-search" action="/search" method="get"><div class="masthead-search-inner-wrap"><label for="masthead-search-field" class="sr-only">Search</label><input
+                id="masthead-search-field" class="masthead-search-field" type="text" name="q" placeholder="Search for music…" /><button class="masthead-search-submit" type="submit">Search</button></div></form><div class="visible-xs"><button
+                        class=" masthead-hamburger-toggle " data-disclose-autoclose aria-controls="masthead-nav">Toggle navigation</button><ul
+                        class=" masthead-nav disclose-hide disclose-hide--js-only " aria-label="Primary navigation" id="masthead-nav"><li class="masthead-nav-item masthead-nav-pro"><a
+                class="masthead-nav-control masthead-pro-text" href="/pro" data-analytics-label="subscribe" data-analytics-action="UserMenuClick">Upgrade to Pro</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/dashboard" data-analytics-action="NavigationLink" data-analytics-label="live">Live</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control masthead-nav-control--active" href="/music" data-analytics-action="NavigationLink" data-analytics-label="music">Music</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/charts" data-analytics-action="NavigationLink" data-analytics-label="charts">Charts</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/events" data-analytics-action="NavigationLink" data-analytics-label="events">Events</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/features" data-analytics-action="NavigationLink" data-analytics-label="features">Features</a></li>
+    
+        
+            <li class="masthead-nav-item">
+                <a
+                    class="masthead-nav-control"
+                    href="/pro"
+                    data-analytics-label="subscribe"
+                    data-analytics-action="UserMenuClick"
+                >Subscribe</a>
+            </li>
+        
+        <li class="masthead-nav-item">
+            <a
+                class="masthead-nav-control"
+                href="/join"
+                data-analytics-action="SignUpClick"
+            >Join</a>
+        </li>
+        <li class="masthead-nav-item">
+            <a
+                class="masthead-nav-control"
+                href="https://secure.last.fm/login"
+            >Login</a>
+        </li>
+    
+</ul></div><div
+                    class=" navlist navlist--more masthead-nav hidden-xs " data-require="components/primary-nav" data-more-string="More…"><ul
+                        class="js-navlist-items navlist-items" aria-label="Primary navigation"><li class="masthead-nav-item masthead-nav-pro"><a
+                class="masthead-nav-control masthead-pro-text" href="/pro" data-analytics-label="subscribe" data-analytics-action="UserMenuClick">Upgrade to Pro</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/dashboard" data-analytics-action="NavigationLink" data-analytics-label="live">Live</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control masthead-nav-control--active" href="/music" data-analytics-action="NavigationLink" data-analytics-label="music">Music</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/charts" data-analytics-action="NavigationLink" data-analytics-label="charts">Charts</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/events" data-analytics-action="NavigationLink" data-analytics-label="events">Events</a></li><li class="masthead-nav-item"><a
+                class=" masthead-nav-control " href="/features" data-analytics-action="NavigationLink" data-analytics-label="features">Features</a></li></ul></div><ul
+            class=" site-auth site-auth--anon hidden-xs ">
+    <li class="site-auth-item"><a
+                class="site-auth-control" href="/join" data-analytics-action="SignUpClick">Join</a></li><li class="site-auth-item"><a
+                class="site-auth-control" href="https://secure.last.fm/login">Login</a></li>
+</ul></div></nav>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+    
+    
+
+
+    
+    
+
+
+    
+
+    
+
+    
+    <div
+        class="nag-bar nag-bar--plybar-masthead-release-warning "
+        
+        role="status"
+    >
+        <div class="container">
+            
+            <p class="nag-bar-message ">
+                
+        A new version of Last.fm is available, to keep everything running smoothly, please <a href="javascript:window.location.reload()">reload</a> the site.
+    
+            </p>
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+    
+
+    
+        
+    
+
+
+    
+
+    
+    <div id="mantle_skin" class="adaptive-skin-container">
+        <div class="adaptive-skin-wrapper">
+            <div id="adSkinLeft" class="adaptive-skin-left"></div>
+            <div id="adSkinRight" class="adaptive-skin-right"></div>
+        </div>
+        
+
+        
+
+        
+        
+
+        
+    
+
+
+<header class="
+    header-new
+    header-new--artist
+    header-new--subpage
+    
+">
+    
+    
+    
+    <div
+        class="
+            header-new-inner
+            
+            
+        "
+        
+            style="background: #505050"
+        
+    >
+        
+            <div class="header-new-background">
+                <div
+                    class="header-new-background-image"
+                    style="background-image: url(https://lastfm.freetls.fastly.net/i/u/ar0/af850594aac743b2c3c0f2807ce3dc41.jpg);"
+                    itemprop="image"
+                    content="https://lastfm.freetls.fastly.net/i/u/ar0/af850594aac743b2c3c0f2807ce3dc41.jpg"
+                ></div>
+                <div
+                    class="header-new-background-overlay-mobile"
+                    style="
+                        background: linear-gradient(
+                            rgba(80,80,80,0),
+                            rgba(80,80,80,1)
+                        );
+                    "
+                ></div>
+                <div
+                    class="header-new-background-overlay"
+                    style="
+                        background: linear-gradient(
+                            0.25turn,
+                            rgba(80,80,80,1),
+                            rgba(80,80,80,0)
+                        );
+                    "
+                ></div>
+            </div>
+        
+        <div class="header-new-content">
+            
+        
+    
+    <h1 class="header-new-title" itemprop="name">Noveller</h1>
+    <link itemprop="url" href="/music/Noveller" />
+
+        
+        
+    
+        
+    <nav
+        class="
+            
+                navlist
+            
+            secondary-nav
+            
+                navlist--more
+            
+            
+        "
+        aria-label="Secondary navigation"
+        
+            data-require="components/collapsing-nav-v2"
+            data-more-string="More…"
+        
+    >
+        <ul class="navlist-items js-navlist-items">
+            <li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--overview
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller"
+                            
+                        >
+                            Overview
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--tracks
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+tracks"
+                            
+                        >
+                            Tracks
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--albums
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+albums"
+                            
+                        >
+                            Albums
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--images
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                                    secondary-nav-item-link--active
+                                
+                            "
+                            href="/music/Noveller/+images/af850594aac743b2c3c0f2807ce3dc41"
+                            
+                        >
+                            Photos
+                            
+                                <span class="sr-only">(current section)</span>
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--similar
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+similar"
+                            
+                        >
+                            Similar Artists
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--events
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+events"
+                            
+                        >
+                            Events
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--wiki
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+wiki"
+                            
+                        >
+                            Biography
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--tags
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+tags"
+                            
+                        >
+                            Tags
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--shoutbox
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+shoutbox"
+                            
+                        >
+                            Shouts
+                            
+                        </a></li><li
+                    class="
+                        
+                            navlist-item
+                        
+                        secondary-nav-item
+                        
+                            secondary-nav-item--listeners
+                        
+                    "
+                ><a
+                            class="
+                                secondary-nav-item-link
+                                
+                            "
+                            href="/music/Noveller/+listeners"
+                            
+                        >
+                            Listeners
+                            
+                        </a></li>
+        </ul>
+    </nav>
+
+    
+
+    
+        </div>
+        
+    </div>
+
+</header>
+
+    <div class="full-bleed-ad-container" data-ad-container>
+        
+    
+        
+        
+            <div id="leader_top" data-ad="leader_top" class="leader_top lastfm-ad" data-ads-placement='{&#34;id&#34;: &#34;leader_top&#34;, &#34;sizes&#34;: [[728, 90], [970, 66], [970, 250], [728, 91]], &#34;targeting&#34;: {&#34;pos&#34;: &#34;top&#34;}, &#34;adblock_message&#34;: true}'></div>
+        
+        
+    
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+<div class="container page-content">
+    
+    
+        <div
+            class="
+                tonefuze
+                
+                    tonefuze--mobile
+                    visible-xs
+                
+                
+            "
+            data-require="ads/tonefuze"
+
+            
+                id="tonefuze-mobile-3f47074f-1f8e-4e96-a3dd-d4f6f6903165"
+                data-tonefuze-id="100000055"
+            
+
+            
+                data-tonefuze-artist="Noveller"
+            
+        ></div>
+    
+
+    <div class="row buffer-4 buffer-reset@sm">
+        <div class="col-main">
+            <div class="section-controls buffer-4 buffer-reset@sm">
+                <h2 class="subpage-title">
+                    Photos
+                </h2>
+                
+                    
+    
+    
+        <button
+            class="
+                disclose-trigger
+                dropdown-menu-clickable-button
+                
+            "
+            aria-expanded="false"
+            aria-controls="gallery-sort"
+            data-disclose-select
+            data-dropdown-layout-at="right-6 bottom"
+        ><span class="sr-only">Sorted by: </span>Most popular</button>
+    
+    
+    <ul
+        class="
+            
+            dropdown-menu-clickable
+            disclose-hide
+            disclose-hide--js-only
+        "
+        id="gallery-sort"
+        
+            data-dropdown-layout-align="right"
+        
+    >
+        
+            <li>
+                <a
+                    class="
+                        dropdown-menu-clickable-item
+                        
+                            dropdown-menu-clickable-item--selected
+                        
+                    "
+                    href="/music/Noveller/+images"
+                    
+                        data-partial-href=""
+                    
+                >Most popular</a>
+            </li>
+        
+            <li>
+                <a
+                    class="
+                        dropdown-menu-clickable-item
+                        
+                    "
+                    href="/music/Noveller/+images?sort=date"
+                    
+                        data-partial-href="?sort=date"
+                    
+                >Most recent</a>
+            </li>
+        
+    </ul>
+
+
+                
+            </div>
+            
+                
+    
+        <a class="btn-add buffer-standard"
+            
+    
+        
+        
+    
+    
+        data-open-modal="/join/modal?action=upload-image&amp;back_to=%2Fmusic%2FNoveller%2F%2Bimages%2Fupload"
+    
+    
+    href="https://secure.last.fm/login?next=/music/Noveller/%2Bimages/upload"
+
+        >Add image</a>
+    
+
+                <p class="buffer-standard">
+                    See the latest images of Noveller, including photoshoots, and artist pictures.
+                </p>
+                
+                    
+    <ul class="image-list">
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/af850594aac743b2c3c0f2807ce3dc41" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/af850594aac743b2c3c0f2807ce3dc41"
+                        alt="Lisa"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/b7fc8c503d2e455e9b8457c7a31d6693" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/b7fc8c503d2e455e9b8457c7a31d6693"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/e4f20b18020a4b66b74ec96785c9c08c" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/e4f20b18020a4b66b74ec96785c9c08c"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/b4bd5affd6b94f4eaf23983deec39307" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/b4bd5affd6b94f4eaf23983deec39307"
+                        alt="NVLR2"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/913b1c18ccfa4d5cb6dff420d90c1c86" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/913b1c18ccfa4d5cb6dff420d90c1c86"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/57e0a90fbc5bebd0100881fc9146d09f" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/57e0a90fbc5bebd0100881fc9146d09f"
+                        alt="11_n"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/660c4f61128f402d80afe02777357634" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/660c4f61128f402d80afe02777357634"
+                        alt="sarah jane"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/1473fe4323004174acf17552d7920d97" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1473fe4323004174acf17552d7920d97"
+                        alt="NVLR5"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/0ac056de08074b07cb99a8c37f0dd8e6" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/0ac056de08074b07cb99a8c37f0dd8e6"
+                        alt="Noveller"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/ce97c070e9cd482888468967bd21460c" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/ce97c070e9cd482888468967bd21460c"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/d78768225f1c4fc392137db500a5e6d7" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/d78768225f1c4fc392137db500a5e6d7"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/568618919b9c43a281411b02303297d9" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/568618919b9c43a281411b02303297d9"
+                        alt="NVLR6"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/0e5cde7a83fd4600bf01622f1a1a6fe1" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/0e5cde7a83fd4600bf01622f1a1a6fe1"
+                        alt="Noveller"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/1bcd89cb2d6342c3b8f0d55fd2b8e691" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1bcd89cb2d6342c3b8f0d55fd2b8e691"
+                        alt="Sarah"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/0831855ed5c6438096f270bf30187169" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/0831855ed5c6438096f270bf30187169"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/cd03b56c1e634d6c8350bb70a46cb722" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/cd03b56c1e634d6c8350bb70a46cb722"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/ff96241cddcd4c50b9431f4846a00c69" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/ff96241cddcd4c50b9431f4846a00c69"
+                        alt="NVLR7"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/70eb10873eb2296593aae6d540345d96" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/70eb10873eb2296593aae6d540345d96"
+                        alt="21985146_513175489037697_6599141933757497344_n.jpg"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/279431dbdc305becec19581bab3831e7" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/279431dbdc305becec19581bab3831e7"
+                        alt="noveller.jpg"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/3814fc57c080403a9c1e984715b7d662" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/3814fc57c080403a9c1e984715b7d662"
+                        alt="PNG"
+                    >
+                </a>
+            </li>
+        
+    </ul>
+
+                    <div class="full-bleed-ad-container buffer-standard" data-ad-container>
+                        
+    
+        
+        
+            <div id="mobile_pos_1" data-ad="mobile_pos_1" class="mobile_pos_1 lastfm-ad-mobile" data-ads-placement='{&#34;id&#34;: &#34;mobile_pos_1&#34;, &#34;sizes&#34;: [[300, 250], [320, 50]], &#34;is_mobile&#34;: true, &#34;targeting&#34;: {&#34;pos&#34;: &#34;1&#34;}, &#34;adblock_message&#34;: true}'></div>
+        
+        
+            <p class="mpu-subscription-upsell mpu-subscription-upsell--mobile_pos_1">
+                Don't want to see ads? <a href="/pro" data-analytics-action="SubscribeClick" data-analytics-label="AdUpsellCTA">Upgrade Now</a>
+            </p>
+        
+    
+
+                    </div>
+                    
+    <ul class="image-list">
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/3192a1f9cc274197a34f06fb84cd4756" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/3192a1f9cc274197a34f06fb84cd4756"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/1cf275096d0a4d6abb94c72bf643ea48" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1cf275096d0a4d6abb94c72bf643ea48"
+                        alt="Noveller @ Sonic Circuits"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/fca0f6e22181469c8d88efd1d77a3f56" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/fca0f6e22181469c8d88efd1d77a3f56"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/1c4ac83052b24ac1b6fb5599cd28f151" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1c4ac83052b24ac1b6fb5599cd28f151"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/2f1736ec21a349e4bdea081e29b0d7f3" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/2f1736ec21a349e4bdea081e29b0d7f3"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/38bee58c2c9545e584d7b71d75fd761e" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/38bee58c2c9545e584d7b71d75fd761e"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/af485a92eb9c4b74ad2315acfd8d6918" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/af485a92eb9c4b74ad2315acfd8d6918"
+                        alt="Noveller @ Monkeytown"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/8aae24c5cd70408c95ffa7774343378a" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/8aae24c5cd70408c95ffa7774343378a"
+                        alt="Noveller @ Monkeytown"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/0896526399214a28855cb0178333fc3c" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/0896526399214a28855cb0178333fc3c"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/8395efea36ca4e64ae8018951050b8ac" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/8395efea36ca4e64ae8018951050b8ac"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/41ad5b0bb4094be485252efb750c22bd" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/41ad5b0bb4094be485252efb750c22bd"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/7553638f33534680994194441d1e9358" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/7553638f33534680994194441d1e9358"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/b3b55f9b298247519fd57ff1bf7417b0" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/b3b55f9b298247519fd57ff1bf7417b0"
+                        alt="NVLR3"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/5ae4880dd9ff4d1e9415ed856d25768e" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/5ae4880dd9ff4d1e9415ed856d25768e"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/608ecd1683e84a4ba8f7e8ab891aa3e8" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/608ecd1683e84a4ba8f7e8ab891aa3e8"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/6fcbcd1605394172c1f4d05618f15162" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/6fcbcd1605394172c1f4d05618f15162"
+                        alt="Noveller"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/1acfff7c3a4c40d29b86ce6119e1725e" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/1acfff7c3a4c40d29b86ce6119e1725e"
+                        alt="None"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/f389ec5e5b15e596feeac580bc2f5286" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/f389ec5e5b15e596feeac580bc2f5286"
+                        alt="PNG_06.png"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/aa370d92c8699d02584cc99e9dfbe944" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/aa370d92c8699d02584cc99e9dfbe944"
+                        alt="PNG_05.png"
+                    >
+                </a>
+            </li>
+        
+            <li class="image-list-item-wrapper">
+                <a href="/music/Noveller/+images/453792397ea09b69618490200cbd9b66" class="image-list-item">
+                    <img
+                        src="https://lastfm.freetls.fastly.net/i/u/avatar170s/453792397ea09b69618490200cbd9b66"
+                        alt="PNG_01.png"
+                    >
+                </a>
+            </li>
+        
+    </ul>
+
+                
+                
+    
+        
+
+        
+
+        <nav class="pagination">
+            <h2 class="sr-only">Pagination</h2>
+
+            <ul class="pagination-list">
+                
+                
+                    <li
+                        class="
+                            pagination-page
+                            
+                            
+                            
+                        "
+                        
+                            aria-current="page"
+                        
+                    >
+                        
+                            
+                               <span>1</span>
+                            
+                        
+                    </li>
+                
+                    <li
+                        class="
+                            pagination-page
+                            
+                            
+                            
+                        "
+                        
+                    >
+                        
+                            
+                                <a href="?page=2">2</a>
+                            
+                        
+                    </li>
+                
+                
+                    <li class="pagination-next" data-pagination-next-link>
+                        <a href="?page=2">Next</a>
+                    </li>
+                
+            </ul>
+        </nav>
+    
+
+            
+            <div class="full-bleed-ad-container buffer-standard" data-ad-container>
+                
+                    
+    
+        
+        
+            <div id="mobile_pos_2" data-ad="mobile_pos_2" class="mobile_pos_2 lastfm-ad-mobile" data-ads-placement='{&#34;id&#34;: &#34;mobile_pos_2&#34;, &#34;sizes&#34;: [[300, 250]], &#34;is_mobile&#34;: true, &#34;targeting&#34;: {&#34;pos&#34;: &#34;2&#34;}, &#34;adblock_message&#34;: true}'></div>
+        
+        
+            <p class="mpu-subscription-upsell mpu-subscription-upsell--mobile_pos_2">
+                Don't want to see ads? <a href="/pro" data-analytics-action="SubscribeClick" data-analytics-label="AdUpsellCTA">Upgrade Now</a>
+            </p>
+        
+    
+
+                
+            </div>
+
+            
+
+            
+                
+
+
+    <section class="similar-albums-body section-with-separator visible-xs">
+        <h3 class="text-18">Similar Artists</h3>
+        
+    
+
+    
+    
+    
+    <ol
+        class="
+            
+            similar-items-body
+            similar-items-body--with-12
+        "
+        
+    >
+        
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Christina+Vantzou"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Christina Vantzou</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            58,566 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/5ce110715a734d0acdc6b02e01b0c584.jpg"
+            
+    alt="Avatar for Christina Vantzou"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Christina+Vantzou"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Simon+Scott"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Simon Scott</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            25,023 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/143524057940411f93a59fdd42646fc9.jpg"
+            
+    alt="Avatar for Simon Scott"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Simon+Scott"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Sarah+Davachi"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Sarah Davachi</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            35,825 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/632fa21c72c3e40128593818f1222476.jpg"
+            
+    alt="Avatar for Sarah Davachi"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Sarah+Davachi"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Julianna+Barwick"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Julianna Barwick</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            210,016 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/c932abe469395b4baea57d965f3645d5.jpg"
+            
+    alt="Avatar for Julianna Barwick"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Julianna+Barwick"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Roly+Porter"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Roly Porter</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            25,500 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/a904b4ee942f6af25a586a7886968a20.jpg"
+            
+    alt="Avatar for Roly Porter"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Roly+Porter"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Grouper"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Grouper</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            375,556 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/0e2c91371ee8419bc19f03af646ad106.jpg"
+            
+    alt="Avatar for Grouper"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Grouper"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Nadja"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Nadja</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            81,491 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/3c0bed16e73b4f449138d80428fee223.jpg"
+            
+    alt="Avatar for Nadja"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Nadja"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Mirrorring"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Mirrorring</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            38,801 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/cec6a6f559d95a0e8070c04365c7d593.jpg"
+            
+    alt="Avatar for Mirrorring"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Mirrorring"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Thisquietarmy"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Thisquietarmy</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            21,537 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/627abc7bf16646868af3c92370d4ca96.jpg"
+            
+    alt="Avatar for Thisquietarmy"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Thisquietarmy"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Motion+Sickness+of+Time+Travel"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Motion Sickness of Time Travel</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            19,531 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/c6df8dd11f4f43fdbc2a3e3944ef7d4c.jpg"
+            
+    alt="Avatar for Motion Sickness of Time Travel"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Motion+Sickness+of+Time+Travel"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/M.+Geddes+Gengras"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >M. Geddes Gengras</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            8,201 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/425baf5d26ff4e1bbefb12884cd4870b.jpg"
+            
+    alt="Avatar for M. Geddes Gengras"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/M.+Geddes+Gengras"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-body-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-body-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-body-item-name" itemprop="name">
+        <a
+            href="/music/Jefre+Cantu-Ledesma"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Jefre Cantu-Ledesma</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-body-item-aux-text similar-items-body-item-listeners">
+            65,747 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-body-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/c36f4286aaf043d9c36f1d4a3f726fd2.jpg"
+            
+    alt="Avatar for Jefre Cantu-Ledesma"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Jefre+Cantu-Ledesma"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+    </ol>
+
+
+
+
+        <p class="more-link-fullwidth">
+            <a href="/music/Noveller/+similar">View all similar artists</a>
+        </p>
+    </section>
+
+            
+        </div>
+        <div class="col-sidebar hidden-xs">
+            
+    
+        <div
+            class="
+                tonefuze
+                
+                    tonefuze--desktop
+                    hidden-xs
+                
+                
+            "
+            data-require="ads/tonefuze"
+
+            
+                id="tonefuze-desktop-23393a0a-9e4c-46af-854c-905886bc096e"
+                data-tonefuze-id="100000054"
+            
+
+            
+                data-tonefuze-artist="Noveller"
+            
+        ></div>
+    
+
+
+            
+
+            
+                
+
+
+
+    
+        
+        <section class="buffer-standard hidden-xs">
+            <h3 class="text-18">Similar Artists</h3>
+            
+    
+
+    
+    
+    
+    <ol
+        class="
+            
+            similar-items-sidebar
+            similar-items-sidebar--with-3
+        "
+        
+    >
+        
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Christina+Vantzou"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Christina Vantzou</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            58,566 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/5ce110715a734d0acdc6b02e01b0c584.jpg"
+            
+    alt="Avatar for Christina Vantzou"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Christina+Vantzou"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Simon+Scott"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Simon Scott</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            25,023 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/143524057940411f93a59fdd42646fc9.jpg"
+            
+    alt="Avatar for Simon Scott"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Simon+Scott"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Sarah+Davachi"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Sarah Davachi</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            35,825 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/632fa21c72c3e40128593818f1222476.jpg"
+            
+    alt="Avatar for Sarah Davachi"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Sarah+Davachi"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+    </ol>
+
+
+
+
+            
+                <button
+                        class="more-items"
+                        aria-expanded="false"
+                        aria-controls="more-similar-artists"
+                        data-disclose-remove
+                >Show more</button>
+                
+    
+
+    
+    
+    
+    <ol
+        class="
+            disclose-hide
+            similar-items-sidebar
+            similar-items-sidebar--with-9
+        "
+        
+            id="more-similar-artists"
+        
+    >
+        
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Julianna+Barwick"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Julianna Barwick</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            210,016 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/c932abe469395b4baea57d965f3645d5.jpg"
+            
+    alt="Avatar for Julianna Barwick"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Julianna+Barwick"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Roly+Porter"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Roly Porter</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            25,500 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/a904b4ee942f6af25a586a7886968a20.jpg"
+            
+    alt="Avatar for Roly Porter"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Roly+Porter"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Grouper"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Grouper</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            375,556 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/0e2c91371ee8419bc19f03af646ad106.jpg"
+            
+    alt="Avatar for Grouper"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Grouper"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Nadja"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Nadja</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            81,491 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/3c0bed16e73b4f449138d80428fee223.jpg"
+            
+    alt="Avatar for Nadja"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Nadja"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Mirrorring"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Mirrorring</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            38,801 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/cec6a6f559d95a0e8070c04365c7d593.jpg"
+            
+    alt="Avatar for Mirrorring"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Mirrorring"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Thisquietarmy"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Thisquietarmy</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            21,537 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/627abc7bf16646868af3c92370d4ca96.jpg"
+            
+    alt="Avatar for Thisquietarmy"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Thisquietarmy"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Motion+Sickness+of+Time+Travel"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Motion Sickness of Time Travel</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            19,531 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/c6df8dd11f4f43fdbc2a3e3944ef7d4c.jpg"
+            
+    alt="Avatar for Motion Sickness of Time Travel"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Motion+Sickness+of+Time+Travel"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/M.+Geddes+Gengras"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >M. Geddes Gengras</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            8,201 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/425baf5d26ff4e1bbefb12884cd4870b.jpg"
+            
+    alt="Avatar for M. Geddes Gengras"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/M.+Geddes+Gengras"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+                
+            
+
+            
+        
+    
+    <li
+        class="
+            similar-items-sidebar-item-wrap
+            
+            
+        "
+        itemscope
+        itemtype="http://schema.org/MusicGroup"
+        
+        
+    >
+        <div
+            class="
+                similar-items-sidebar-item
+                js-link-block
+                link-block
+            "
+        >
+            
+
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+
+        
+    <h3 class="similar-items-sidebar-item-name" itemprop="name">
+        <a
+            href="/music/Jefre+Cantu-Ledesma"
+            
+            
+                itemprop="url"
+            
+                class="link-block-target"
+            
+        >Jefre Cantu-Ledesma</a>
+    </h3>
+
+
+        
+    
+
+
+        
+
+        
+            
+    
+    
+        <p class="similar-items-sidebar-item-aux-text similar-items-sidebar-item-listeners">
+            65,747 listeners
+        </p>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+    <div class="media-item ">
+        
+    
+    
+        
+    <span class="avatar similar-items-sidebar-item-image">
+        <img
+            src="https://lastfm.freetls.fastly.net/i/u/300x300/c36f4286aaf043d9c36f1d4a3f726fd2.jpg"
+            
+    alt="Avatar for Jefre Cantu-Ledesma"
+
+            
+            
+        >
+    </span>
+
+    
+
+    
+
+    </div>
+
+
+    
+        
+
+            
+                
+                
+    <a
+        href="/music/Jefre+Cantu-Ledesma"
+        class="
+            js-link-block-cover-link
+            link-block-cover-link
+        "
+        tabindex="-1"
+        aria-hidden="true"
+    ></a>
+
+            
+        </div>
+    </li>
+
+    
+            
+    </ol>
+
+
+
+
+            
+        </section>
+    
+
+            
+
+            <div class="sidebar-ad-container buffer-standard" data-ad-container>
+                
+    
+        
+        
+            <div id="mpu_top" data-ad="mpu_top" class="mpu_top lastfm-ad" data-ads-placement='{&#34;id&#34;: &#34;mpu_top&#34;, &#34;sizes&#34;: [[300, 250], [300, 600]], &#34;targeting&#34;: {&#34;pos&#34;: &#34;top&#34;}, &#34;adblock_message&#34;: true}'></div>
+        
+        
+            <p class="mpu-subscription-upsell mpu-subscription-upsell--mpu">
+                Don't want to see ads? <a href="/pro" data-analytics-action="SubscribeClick" data-analytics-label="AdUpsellCTA">Upgrade Now</a>
+            </p>
+        
+    
+
+            </div>
+
+            
+    <div class="related-ads">
+            <div
+                
+                    data-searchlinks-desktop
+                
+            ></div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        
+            
+    <div
+        class="trending-tracks-section-wrapper"
+        data-require="components/lazy-load-v3"
+        data-lazy-load-content="/charts/partial/trending-tracks"
+        data-lazy-load-when-on-screen
+    >
+        
+    <section class="trending-tracks-section">
+        <div class="container">
+            <h3 class="text-18">Trending Tracks</h3>
+            
+    
+    <ul class="trending-tracks">
+        
+            <li class="
+                trending-tracks-item-wrap
+                
+            ">
+                <div class="trending-tracks-item">
+                    
+                        <p class="trending-tracks-item-index">
+                            1
+                        </p>
+                    
+                    
+                        
+    <div class="trending-tracks-album-art media-item">
+        <div class="cover-art--placeholder">
+        </div>
+    </div>
+
+                    
+                </div>
+            </li>
+            <li class="
+                trending-tracks-item-wrap
+                
+            ">
+                <div class="trending-tracks-item">
+                    
+                        <p class="trending-tracks-item-index">
+                            2
+                        </p>
+                    
+                    
+                        
+    <div class="trending-tracks-album-art media-item">
+        <div class="cover-art--placeholder">
+        </div>
+    </div>
+
+                    
+                </div>
+            </li>
+            <li class="
+                trending-tracks-item-wrap
+                
+            ">
+                <div class="trending-tracks-item">
+                    
+                        <p class="trending-tracks-item-index">
+                            3
+                        </p>
+                    
+                    
+                        
+    <div class="trending-tracks-album-art media-item">
+        <div class="cover-art--placeholder">
+        </div>
+    </div>
+
+                    
+                </div>
+            </li>
+            <li class="
+                trending-tracks-item-wrap
+                
+            ">
+                <div class="trending-tracks-item">
+                    
+                        <p class="trending-tracks-item-index">
+                            4
+                        </p>
+                    
+                    
+                        
+    <div class="trending-tracks-album-art media-item">
+        <div class="cover-art--placeholder">
+        </div>
+    </div>
+
+                    
+                </div>
+            </li>
+            <li class="
+                trending-tracks-item-wrap
+                
+            ">
+                <div class="trending-tracks-item">
+                    
+                        <p class="trending-tracks-item-index">
+                            5
+                        </p>
+                    
+                    
+                        
+    <div class="trending-tracks-album-art media-item">
+        <div class="cover-art--placeholder">
+        </div>
+    </div>
+
+                    
+                </div>
+            </li>
+            <li class="
+                trending-tracks-item-wrap
+                
+            ">
+                <div class="trending-tracks-item">
+                    
+                        <p class="trending-tracks-item-index">
+                            6
+                        </p>
+                    
+                    
+                        
+    <div class="trending-tracks-album-art media-item">
+        <div class="cover-art--placeholder">
+        </div>
+    </div>
+
+                    
+                </div>
+            </li>
+    </ul>
+
+
+            <p class="trending-tracks-more-link">
+                <a href="/charts">View all trending tracks</a>
+            </p>
+        </div>
+    </section>
+
+    </div>
+
+
+            <div class="container page-content">
+                
+                    
+    
+    
+    
+        
+    
+    <div
+        class="lazy-features-page-bottom"
+        data-require="components/lazy-load-v3"
+        data-lazy-load-content="/features/partial/page-bottom?artist_url=/music/Noveller"
+        data-lazy-load-when-on-screen
+    >
+        <div class="features-page-bottom section-with-separator section-with-separator--xs-only">
+            <h2 class="text-18">Features</h2>
+            <ul class="features-teasers">
+                
+                    <li class="features-teaser-wrap">
+                        <div class="features-teaser">
+                            <div class="features-teaser-image-outer">
+                                <div class="features-teaser-image--placeholder"></div>
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="features-teaser-wrap">
+                        <div class="features-teaser">
+                            <div class="features-teaser-image-outer">
+                                <div class="features-teaser-image--placeholder"></div>
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="features-teaser-wrap">
+                        <div class="features-teaser">
+                            <div class="features-teaser-image-outer">
+                                <div class="features-teaser-image--placeholder"></div>
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="features-teaser-wrap">
+                        <div class="features-teaser">
+                            <div class="features-teaser-image-outer">
+                                <div class="features-teaser-image--placeholder"></div>
+                            </div>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+                
+
+                
+    
+        
+            
+        
+        <div class="related-content" id="taboola-below-content-thumbnails" data-require="ads/taboola" data-taboola-layout="music-subpage"></div>
+    
+
+            </div>
+        
+
+        
+            <div class="full-bleed-ad-container" data-ad-container>
+                
+    
+        
+        
+            <div id="leader_bottom" data-ad="leader_bottom" class="leader_bottom lastfm-ad" data-ads-placement='{&#34;id&#34;: &#34;leader_bottom&#34;, &#34;sizes&#34;: [[728, 90], [970, 66], [728, 92]], &#34;targeting&#34;: {&#34;pos&#34;: &#34;bottom&#34;}}'></div>
+        
+        
+    
+
+                
+    
+        
+        
+            <div id="mobile_pos_4" data-ad="mobile_pos_4" class="mobile_pos_4 lastfm-ad-mobile" data-ads-placement='{&#34;id&#34;: &#34;mobile_pos_4&#34;, &#34;sizes&#34;: [[300, 250], [320, 50]], &#34;is_mobile&#34;: true, &#34;targeting&#34;: {&#34;pos&#34;: &#34;4&#34;}}'></div>
+        
+        
+    
+
+            </div>
+        
+
+        
+            <div class="container page-content visible-xs">
+                
+    <div class="related-ads">
+            <div
+                
+                    data-searchlinks-mobile
+                
+            ></div>
+        </div>
+
+            </div>
+        
+    </div>
+
+    <div id="qa-page-load"></div>
+
+    
+
+    
+    <footer class="footer" itemscope itemtype="http://schema.org/Organization">
+        <link itemprop="url" href="https://www.last.fm">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top-row">
+                    <div class="footer-top-col">
+                        <h2 class="footer-heading">Company</h2>
+                        <ul class="footer-links">
+                            <li><a href="/about">About Last.fm</a></li>
+                            <li><a href="/about/contact">Contact Us</a></li>
+                            <li><a href="/about/jobs">Jobs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-top-col">
+                        <h2 class="footer-heading">Help</h2>
+                        <ul class="footer-links">
+                            <li><a href="/about/trackmymusic">Track My Music</a></li>
+                            
+                                <li><a href="https://support.last.fm/" target="_BLANK">Community Support</a></li>
+                            
+                            <li><a href="/help/guidelines">Community Guidelines</a></li>
+                            
+                                <li><a href="http://cbsi.force.com/CBSi/lastfm" target="_BLANK">Help</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="footer-top-col">
+                        <h2 class="footer-heading">Goodies</h2>
+                        <ul class="footer-links">
+                            <li><a href="/about/trackmymusic">Download Scrobbler</a></li>
+                            <li><a href="/api">Developer API</a></li>
+                            <li><a href="/music/+free-music-downloads">Free Music Downloads</a></li>
+                            <li><a href="https://store.last.fm">Merchandise</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-top-col">
+                        <h2 class="footer-heading">Account</h2>
+                        <ul class="footer-links">
+                            
+                                <li><a href="/join">Join</a></li>
+                                <li><a href="https://secure.last.fm/login">Login</a></li>
+                                <li><a href="/pro">Subscribe</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="footer-top-col">
+                        <h2 class="footer-heading">Follow Us</h2>
+                        <ul class="footer-links">
+                            <li><a itemprop="sameAs" target="_blank" href="https://www.facebook.com/lastfm">Facebook</a></li>
+                            <li><a itemprop="sameAs" target="_blank" href="https://twitter.com/lastfm">Twitter</a></li>
+                            <li><a itemprop="sameAs" target="_blank" href="https://www.instagram.com/last_fm">Instagram</a></li>
+                            <li><a itemprop="sameAs" target="_blank" href="https://www.youtube.com/user/lastfm">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9">
+                        <ul id="language-selector">
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                            footer-language--active
+                                        
+                                    "
+                                >
+                                    
+                                        <strong>English</strong><span class="sr-only">current language</span>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="de" />
+                                            <button class="mimic-link" name="de" type="submit">Deutsch</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="es" />
+                                            <button class="mimic-link" name="es" type="submit">Español</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="fr" />
+                                            <button class="mimic-link" name="fr" type="submit">Français</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="it" />
+                                            <button class="mimic-link" name="it" type="submit">Italiano</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="ja" />
+                                            <button class="mimic-link" name="ja" type="submit">日本語</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="pl" />
+                                            <button class="mimic-link" name="pl" type="submit">Polski</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="pt" />
+                                            <button class="mimic-link" name="pt" type="submit">Português</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="ru" />
+                                            <button class="mimic-link" name="ru" type="submit">Русский</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="sv" />
+                                            <button class="mimic-link" name="sv" type="submit">Svenska</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="tr" />
+                                            <button class="mimic-link" name="tr" type="submit">Türkçe</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                                
+                                <li
+                                    class="
+                                        footer-language
+                                        
+                                    "
+                                >
+                                    
+                                        <form class="footer-language-form" action="/i18n/setlang/" method="post">
+                                            <input type='hidden' name='csrfmiddlewaretoken' value='27Gr6rkyCLhtocGbu1ImnanXUkMO36rP' />
+                                            <input type="hidden" name="language" value="zh" />
+                                            <button class="mimic-link" name="zh" type="submit">简体中文</button>
+                                        </form>
+                                    
+                                </li>
+                            
+                        </ul>
+                        
+                        <p class="footer-timezone">
+                            
+                                Time zone: <strong>Europe/Rome</strong>
+                            
+                        </p>
+
+                        <div class="footer-legal">
+                            <ul>
+                                <li class="footer-legal-item"><a rel="nofollow" href="http://www.cbsinteractive.com/">CBS Interactive</a> © 2020 <span itemprop="name">Last.fm</span> Ltd. All rights reserved</li>
+                                <li class="footer-legal-item"><a href="/legal/terms">Terms of Use</a></li>
+                                <li class="footer-legal-item"><a href="/legal/privacy">Privacy Policy</a></li>
+                                <li class="footer-legal-item"><a href="/legal">Legal Policies</a></li>
+                                
+                                    <li class="footer-legal-item"><a href="https://ca.privacy.cbs">California Privacy/Info We Collect</a></li>
+                                    <li class="footer-legal-item"><a href="https://ca.privacy.cbs/donotsell">California Do Not Sell My Info</a></li>
+                                
+                                <li class="footer-legal-item"><a target="_blank" href="http://www.cbsinteractive.com/careers">Jobs at CBSi</a></li>
+                                <li class="footer-legal-item"><a rel="nofollow" href="http://www.last.fm">Last.fm Music</a></li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="logo col-xs-12 col-sm-3">
+                        <p>Audioscrobbler</p>
+                        <img src="/static/images/footer_logo@2x.49ca51948b0a.png" width="37" height="20" alt="Last.fm 'as' logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback-message">
+    <div class="feedback-message-inner">
+        <p>
+            <span class="hidden-xs">
+                Let us know what you think of the Last.fm website.
+            </span>
+            <a href="http://cbsi.force.com/CBSi/template_lfmfbk?p_userid=" target="_blank">Leave feedback</a>
+        </p>
+    </div>
+</div>
+    </footer>
+
+
+    <section class="debug-log">
+    <h2 class="debug-log-heading">API Calls</h2>
+    
+</section>
+
+
+        </div>
+        
+    
+        <div
+            data-ads-beacon
+            data-ads-targeting='{&#34;geo&#34;: &#34;IT&#34;, &#34;lang&#34;: &#34;en&#34;, &#34;beta&#34;: &#34;yes&#34;, &#34;ptype&#34;: &#34;image_gallery_list&#34;, &#34;artist&#34;: &#34;noveller&#34;, &#34;ar&#34;: &#34;noveller,christinavantzou,simonscott,sarahdavachi,juliannabarwick&#34;, &#34;tag&#34;: &#34;ambient,drone,experimental,noise,minimal&#34;}'
+            data-ads-unitname='/8264/row-lastfm/music/artist/images/overview'
+            data-ads-unitname-mobile='/8264/maw-lastfm/music/artist/images/overview'
+        ></div>
+    
+
+    </div>
+
+    
+        <div
+            data-require="player/providers/spotify/spotify-provider"
+            data-spotify-auth-modal="/player/modal/spotify"
+            data-spotify-premium-modal="/player/modal/spotify-premium"
+            data-spotify-inactive-modal="/player/modal/spotify-inactive"
+            data-spotify-initial-device-modal="/player/modal/spotify-initial-device-detection"
+        ></div>
+
+        <div
+            data-require="player/providers/youtube/youtube-provider"
+            class="video-player"
+            aria-hidden="true"
+            id="youtube-video"
+        >
+            <div class="video-player-inner-wrap">
+                <div class="video-player-embed js-player"></div>
+                <button class="
+                    video-player-close
+                    js-close-player
+                ">Close</button>
+            </div>
+        </div>
+    
+
+
+        
+            
+        
+        
+            
+    
+        
+        
+            <div id="intromercial" data-ad="intromercial" class="intromercial lastfm-ad" data-ads-placement='{&#34;id&#34;: &#34;intromercial&#34;, &#34;out_of_page&#34;: true}'></div>
+        
+        
+    
+
+            
+    
+        
+        
+            <div id="mobile_intromercial" data-ad="mobile_intromercial" class="mobile_intromercial lastfm-ad-mobile" data-ads-placement='{&#34;id&#34;: &#34;mobile_intromercial&#34;, &#34;is_mobile&#34;: true, &#34;out_of_page&#34;: true}'></div>
+        
+        
+    
+
+        
+
+        <script class="js-modal-template" type="text/template">
+            <div class="modal-dialog" role="dialog" aria-labelledby="modal-label">
+                <div class="modal-content">
+                    <button class="modal-dismiss js-close">Close</button>
+                    <h2
+                        id="modal-label"
+                        class="modal-title js-modal-title"
+                    ></h2>
+                    <div class="modal-body js-modal-body"></div>
+                </div>
+            </div>
+        </script>
+
+        
+        
+            <script class="js-adblock-message-template" type="text/template">
+                
+    
+    <div><div>
+        <section class="
+            adblock-message
+            adblock-message--adfree
+            link-block
+            js-link-block
+        ">
+            <p class="adblock-message-body">
+                
+                    <strong>Browse ad-free</strong> with a premium Last.fm account
+                
+            </p>
+            
+            <a
+                class="adblock-message-button link-block-target"
+                href="/pro"
+                data-analytics-action="SubscribeClick"
+                data-analytics-label="AdblockMessageAdfree"
+            >Find out more</a>
+            <a
+                href="/pro"
+                class="
+                    js-link-block-cover-link
+                    link-block-cover-link
+                "
+                tabindex="-1"
+                aria-hidden="true"
+                data-analytics-action="SubscribeClick"
+                data-analytics-label="AdblockMessageAdfree"
+            ></a>
+        </section>
+    </div></div>
+
+            </script>
+            <script class="js-adblock-message-template" type="text/template">
+                
+    
+    <div><div>
+        <section class="
+            adblock-message
+            adblock-message--support
+            link-block
+            js-link-block
+        ">
+            <p class="adblock-message-body">
+                
+                    <strong>Show your support</strong> with a premium Last.fm account
+                
+            </p>
+            
+            <a
+                class="adblock-message-button link-block-target"
+                href="/pro"
+                data-analytics-action="SubscribeClick"
+                data-analytics-label="AdblockMessageSupport"
+            >Find out more</a>
+            <a
+                href="/pro"
+                class="
+                    js-link-block-cover-link
+                    link-block-cover-link
+                "
+                tabindex="-1"
+                aria-hidden="true"
+                data-analytics-action="SubscribeClick"
+                data-analytics-label="AdblockMessageSupport"
+            ></a>
+        </section>
+    </div></div>
+
+            </script>
+            <script class="js-adblock-message-template" type="text/template">
+                
+    
+    <div><div>
+        <section class="
+            adblock-message
+            adblock-message--benefits
+            link-block
+            js-link-block
+        ">
+            <p class="adblock-message-body">
+                
+                    <strong>Get exclusive benefits</strong> with a premium Last.fm account
+                
+            </p>
+            
+            <a
+                class="adblock-message-button link-block-target"
+                href="/pro"
+                data-analytics-action="SubscribeClick"
+                data-analytics-label="AdblockMessageBenefits"
+            >Find out more</a>
+            <a
+                href="/pro"
+                class="
+                    js-link-block-cover-link
+                    link-block-cover-link
+                "
+                tabindex="-1"
+                aria-hidden="true"
+                data-analytics-action="SubscribeClick"
+                data-analytics-label="AdblockMessageBenefits"
+            ></a>
+        </section>
+    </div></div>
+
+            </script>
+        
+
+        <script>
+            window.lfmDomReadyCallback && window.lfmDomReadyCallback();
+            window.lfmDomReady = true;
+        </script>
+        
+            <link
+                href="/static/styles/build/99599f6990.99599f69904d.css"
+                rel="preload"
+                as="style"
+                charset="utf-8"
+                data-require="shim/rel-preload"
+                media="(min-width: 768px)" 
+            >
+        
+    </body>
+</html>
