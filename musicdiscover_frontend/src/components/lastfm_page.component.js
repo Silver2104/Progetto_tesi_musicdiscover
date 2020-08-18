@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import LastfmDiv from "./lastfm_div.component";
+import LastfmDivMain from "./lastfm_div.component";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -44,6 +44,7 @@ export default class Lastfm_Page extends Component {
 
   render() {
     const { isShowLastfmDiv } = this.state;
+    console.log(this.state.lastfm_info);
     return (
       <Container>
         <Row className="justify-content-md-center">
@@ -71,11 +72,17 @@ export default class Lastfm_Page extends Component {
             </Form>
           </Col>
         </Row>
-        <Row className="justify-content-md-center">
-          <Col xs lg="8">
+        <Row>
+          <Col>
             <div id="div_lastfm_info">
               {isShowLastfmDiv && (
-                <LastfmDiv links_photo={this.state.lastfm_info.links_photo} />
+                <LastfmDivMain
+                  links_photo={this.state.lastfm_info.links_photo}
+                  biography={this.state.lastfm_info.info.artist.bio.content}
+                  songs={this.state.lastfm_info.tracks.toptracks.track}
+                  albums={this.state.lastfm_info.albums.topalbums.album}
+                  similars={this.state.lastfm_info.info.artist.similar.artist}
+                />
               )}
             </div>
           </Col>
