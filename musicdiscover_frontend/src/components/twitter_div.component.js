@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { TwitterTweetEmbed } from "react-twitter-embed";
+import TweetEmbed from "react-tweet-embed";
 
 export default class TwitterDivMain extends Component {
   render() {
-    return <p>Ciao bello</p>;
+    return (
+      <div>
+        <TweetEmbed id="1296290537780080640" />
+      </div>
+    );
   }
 }
