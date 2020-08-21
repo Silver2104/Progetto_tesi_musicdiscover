@@ -6,6 +6,7 @@ import Navbar from "./components/navbar.component";
 import HomePage from "./components/home-page.component";
 import DownloadForm from "./components/download-form.component";
 import Lastfm_page from "./components/lastfm_page.component";
+import Twitter_page from "./components/twitter_page.component.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/Bandcamp" component={DownloadForm} />
         <Route path="/Lastfm" component={Lastfm_page} />
+        <Route path="/Twitter" component={Twitter_page} />
       </div>
     </Router>
   );

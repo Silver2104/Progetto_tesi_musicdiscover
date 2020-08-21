@@ -21,9 +21,9 @@ export default class Navbar extends Component {
             MusicDiscover
           </Link>
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li className="nav-item active">
+            <li className="nav-item">
               <Link className="nav-link" to="/">
-                Home <span className="sr-only">(current)</span>
+                Home
               </Link>
             </li>
             <li className="nav-item">
@@ -34,6 +34,11 @@ export default class Navbar extends Component {
             <li className="nav-item">
               <Link className="nav-link" to="/Lastfm">
                 Lastfm
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Twitter">
+                Twitter
               </Link>
             </li>
           </ul>

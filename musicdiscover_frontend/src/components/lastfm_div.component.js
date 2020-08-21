@@ -63,7 +63,7 @@ export class LastfmDivSimilar extends Component {
 export class LastfmDivTopSongs extends Component {
   createsongslist() {
     return this.props.songs.map((song) => {
-      return <p>- {song.name}</p>;
+      return <p key={song.name}>- {song.name}</p>;
     });
   }
   render() {
@@ -81,7 +81,7 @@ export class LastfmDivTopSongs extends Component {
 export class LastfmDivTopAlbums extends Component {
   createalbumslist() {
     return this.props.albums.map((album) => {
-      return <p>- {album.name}</p>;
+      return <p key={album.name}>- {album.name}</p>;
     });
   }
 

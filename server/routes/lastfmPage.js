@@ -1,26 +1,24 @@
 const router = require("express").Router(); //Importo il package di routing
-const got = require("got"); // Per utilizzare il paradigma REST
 const {
   get_top_tracks,
   get_info,
   get_top_albums,
   get_links_photo,
 } = require("../functions/lastfm_functions");
-//const md5 = require("md5"); MUOVERE NEL PACKAGE lastfmPage_functions.js ------ NON SERVE PIù, eliminare anche il package con npm --------
 
 router.route("/").post((req, res) => {
-  let lastfm_onj = {
+  let lastfm_obj = {
     tracks: {},
     albums: {},
     info: {},
     links_photo: [],
   };
   asyncRunner(req.body.artist).then((info) => {
-    lastfm_onj.tracks = JSON.parse(info.top_tracks);
-    lastfm_onj.info = JSON.parse(info.info);
-    lastfm_onj.albums = JSON.parse(info.albums);
-    lastfm_onj.links_photo = info.links_photo;
-    res.send(lastfm_onj);
+    lastfm_obj.tracks = JSON.parse(info.top_tracks);
+    lastfm_obj.info = JSON.parse(info.info);
+    lastfm_obj.albums = JSON.parse(info.albums);
+    lastfm_obj.links_photo = info.links_photo;
+    res.send(lastfm_obj);
   });
 });
 
