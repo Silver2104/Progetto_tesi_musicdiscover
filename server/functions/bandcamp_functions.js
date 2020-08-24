@@ -4,22 +4,30 @@ const bancamp_album_getsongs = (info) => {
   return new Promise((resolve, reject) => {
     (async () => {
       try {
+        console.log("SONO IN bancamp_album_getsongs");
         for (const album of info.albums) {
+          console.log(album);
           //var canzoni = [];
-          const response = await got(album.link_album);
+          console.log("SONO PRIMA DELLA CHIAMATA AL SITO BANDCAMP");
+          const response = await got(album.link_album.replace(/\s/gi, ""));
+          console.log("SONO DOPO LA CHIAMATA AL SITO BANDCAMP");
           var PatternSongs = new RegExp(/itemprop="name">(.+)<\/s/, "g");
           var arraySongs = response.body.matchAll(PatternSongs);
+          console.log("SONO PRIMA DEL CICLO FOR");
           for (const canzone of arraySongs) {
+            console.log("SONO NEL CICLO FOR");
             album.canzoni.push(canzone[1]);
           }
+          console.log("SONO USCITO DAL CICLO FOR");
         }
         if (info != null) {
+          console.log("SONO USCITO DA bancamp_album_getsongs");
           resolve(info);
         } else {
           reject(Error("It broke"));
         }
       } catch (error) {
-        console.log(error.response.body);
+        console.log("ERRORE IN bancamp_album_getsongs");
         //=> 'Internal server error ...'
       }
     })();
@@ -33,7 +41,10 @@ const bandcamp_getlinkBand = (info, testo_pagina) => {
     var rePattern = new RegExp(/"byArtist">\s+<a href="(.*)"/);
     var arrMatches = testo_pagina.match(rePattern);
     info.band_link = arrMatches[1];
+    console.log("STO IN BANDCAMP_GETLINKBAND");
+    console.log(info.band_link);
     if (info.band_link != null) {
+      console.log("SONO USCITO DA BANDCAMP_GETLINKBAND");
       resolve(info);
     } else {
       reject(
@@ -50,6 +61,7 @@ const bandcamp_getBandPhotoandName = (info) => {
   return new Promise((resolve, reject) => {
     (async () => {
       try {
+        console.log("SONO IN bandcamp_getBandPhotoandName");
         let oggetto_composto = {
           info_oggetto_composto: {},
           response_oggetto_composto: {},
@@ -67,6 +79,7 @@ const bandcamp_getBandPhotoandName = (info) => {
         oggetto_composto.info_oggetto_composto = info;
         oggetto_composto.response = response;
         if (info.band_photo != null && info.band_name != null) {
+          console.log("SONO USCITO DA bandcamp_getBandPhotoandName");
           resolve(oggetto_composto);
         } else {
           reject(
@@ -85,6 +98,7 @@ const bandcamp_getBandPhotoandName = (info) => {
 //Funzione promessa che prende le informazioni degli album della band
 const bandcamp_getBandAlbumsinfo = (info, response) => {
   return new Promise((resolve, reject) => {
+    console.log("SONO IN bandcamp_getBandAlbumsinfo");
     //Cerco informazioni albums
     var pattern_link_album = new RegExp(
       /<a href="(\/album.+)".*\s*.*\s*.*src="(.*)\salt.*\s*.*\s*.*\s*(.*)/,
@@ -99,8 +113,7 @@ const bandcamp_getBandAlbumsinfo = (info, response) => {
         canzoni: [],
       };
       //CODICE PER PRENDERE IL LINK DELLA PAGINA DELL'ALBUM
-      const stringa_link_album =
-        "https://" + info.band_name + ".bandcamp.com" + match[1];
+      const stringa_link_album = info.band_link + match[1];
       //FINE CODICE PER PRENDERE IL LINK DELLA PAGINA DELL'ALBUM
       //CODICE PER PRENDERE IL LINK DELLA FOTO DELL'ALBUM
       let stringa = "";
@@ -120,6 +133,7 @@ const bandcamp_getBandAlbumsinfo = (info, response) => {
     }
 
     if (info != null) {
+      console.log("SONO USCITO DA bandcamp_getBandAlbumsinfo");
       resolve(info);
     } else {
       reject(Error("It broke"));
@@ -146,6 +160,8 @@ const bandcamp_getinfo = (testo_pagina) => {
             ).then((info) => {
               bancamp_album_getsongs(info).then((info) => {
                 if (info != null) {
+                  console.log("STO IN bandcamp_getinfo");
+                  console.log(info);
                   resolve(info);
                 } else {
                   reject(Error("It broke"));
@@ -155,7 +171,7 @@ const bandcamp_getinfo = (testo_pagina) => {
           });
         });
       } catch (error) {
-        console.log(error.response.body);
+        console.log("ERRORE IN bandcamp_getinfo");
         //=> 'Internal server error ...'
       }
     })();

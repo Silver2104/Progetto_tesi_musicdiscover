@@ -7,9 +7,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export default class LastfmDivMain extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <Container>
@@ -96,10 +93,6 @@ export class LastfmDivTopAlbums extends Component {
 }
 
 export class LastfmDivBiography extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const text = this.props.biography_text.split("<a")[0];
     console.log(this.props.biography_text.indexOf("<a"));
@@ -116,9 +109,6 @@ export class LastfmDivBiography extends Component {
 }
 
 export class LastfmDivCarousel extends Component {
-  constructor(props) {
-    super(props);
-  }
   createCarouselItems() {
     return this.props.links_photo.map((link) => {
       return (

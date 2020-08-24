@@ -16,19 +16,18 @@ export default class Twitter_page extends Component {
 
     this.state = {
       twitter_account: "",
-      twitter_info: "",
+      twitter_info: [],
       isShowTwitterDiv: false,
     };
   }
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.state.twitter_account);
     const link = {
       artist: this.state.twitter_account,
     };
-    console.log(link);
     axios.post("http://localhost:3001/twitter/", link).then((res) => {
+      console.log(res.data);
       this.setState({
         twitter_info: res.data,
       });
@@ -45,9 +44,9 @@ export default class Twitter_page extends Component {
       twitter_account: e.target.value,
     });
   }
+
   render() {
     const { isShowTwitterDiv } = this.state;
-    console.log(this.state.twitter_info);
     return (
       <Container>
         <Row className="justify-content-md-center">
@@ -78,7 +77,9 @@ export default class Twitter_page extends Component {
         <Row>
           <Col>
             <div id="div_lastfm_info">
-              {isShowTwitterDiv && <TwitterDivMain />}
+              {isShowTwitterDiv && (
+                <TwitterDivMain ids={this.state.twitter_info} />
+              )}
             </div>
           </Col>
         </Row>

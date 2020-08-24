@@ -36,6 +36,7 @@ export default class BandCampPage extends Component {
       this.setState({
         bandcamp_info: res.data,
       });
+      this.hideComponent();
     });
     this.setState({
       download_link: "",
@@ -44,6 +45,7 @@ export default class BandCampPage extends Component {
 
   render() {
     const { isShowBandcampDiv } = this.state;
+    console.log(this.state.bandcamp_info);
     return (
       <div>
         <form onSubmit={this.onSubmit}>
@@ -61,9 +63,6 @@ export default class BandCampPage extends Component {
           </button>
         </form>
         <div id="div_bandcamp_info">
-          <button onClick={() => this.hideComponent()}>
-            Show bandcamp information
-          </button>
           {isShowBandcampDiv && (
             <BandcampDiv bandcamp_info={this.state.bandcamp_info} />
           )}

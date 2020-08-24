@@ -5,9 +5,13 @@ router.route("/").post((req, res) => {
   let twitter_obj = {
     info: {},
   };
+  let array_id_tweets = [];
   asyncRunner(req.body.artist).then((info) => {
     twitter_obj.info = JSON.parse(info.info);
-    res.send(twitter_obj);
+    for (let i = 0; i < twitter_obj.info.length; i++) {
+      array_id_tweets.push(twitter_obj.info[i].id_str);
+    }
+    res.send(array_id_tweets);
   });
 });
 

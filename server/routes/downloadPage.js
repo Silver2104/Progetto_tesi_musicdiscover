@@ -15,6 +15,7 @@ router.route("/").post((req, res) => {
     .then((testo_pagina) => {
       const info_bandcamp = bandcamp_getinfo(testo_pagina).then(
         (info_bandcamp) => {
+          console.log(info_bandcamp);
           res.send(info_bandcamp);
         }
       );
