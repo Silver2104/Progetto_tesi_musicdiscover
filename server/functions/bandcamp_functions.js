@@ -37,21 +37,40 @@ const bancamp_album_getsongs = (info) => {
 //Funzione promessa che prende il link della band
 const bandcamp_getlinkBand = (info, testo_pagina) => {
   return new Promise((resolve, reject) => {
-    //Cerco il link per la pagina della band e lo metto dentro info
-    var rePattern = new RegExp(/"byArtist">\s+<a href="(.*)"/);
-    var arrMatches = testo_pagina.match(rePattern);
-    info.band_link = arrMatches[1];
     console.log("STO IN BANDCAMP_GETLINKBAND");
-    console.log(info.band_link);
-    if (info.band_link != null) {
-      console.log("SONO USCITO DA BANDCAMP_GETLINKBAND");
-      resolve(info);
+    //Cerco il link per la pagina della band e lo metto dentro info
+    var rePattern1 = new RegExp(/"byArtist">\s+<a href="(.*)"/);
+    var arrMatches1 = testo_pagina.match(rePattern1);
+    var rePattern2 = new RegExp(/band-name.*\s*.*"title">(.*)<\/span>/);
+    var arrMatches2 = testo_pagina.match(rePattern2);
+    if (arrMatches1 != null) {
+      console.log(arrMatches1[1]);
+      info.band_link = arrMatches1[1];
+      console.log(info.band_link);
+      if (info.band_link != null) {
+        console.log("SONO USCITO DA BANDCAMP_GETLINKBAND");
+        resolve(info);
+      } else {
+        reject(
+          Error(
+            "Non sono riuscito a mettere il link della band dentro ad info (Funzione bandcamp_getlinkBand)"
+          )
+        );
+      }
     } else {
-      reject(
-        Error(
-          "Non sono riuscito a mettere il link della band dentro ad info (Funzione bandcamp_getlinkBand)"
-        )
-      );
+      console.log(arrMatches2[1]);
+      info.band_link = "https://" + arrMatches2[1] + ".bandcamp.com/";
+      console.log(info.band_link);
+      if (info.band_link != null) {
+        console.log("SONO USCITO DA BANDCAMP_GETLINKBAND");
+        resolve(info);
+      } else {
+        reject(
+          Error(
+            "Non sono riuscito a mettere il link della band dentro ad info (Funzione bandcamp_getlinkBand)"
+          )
+        );
+      }
     }
   });
 };
