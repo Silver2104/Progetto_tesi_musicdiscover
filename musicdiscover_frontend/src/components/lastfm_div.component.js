@@ -10,11 +10,13 @@ export default class LastfmDivMain extends Component {
   render() {
     return (
       <Container>
-        <Row className="justify-content-md-center">
-          <Col xs lg="8">
-            <LastfmDivCarousel links_photo={this.props.links_photo} />
-          </Col>
-        </Row>
+        <Jumbotron>
+          <Row className="justify-content-md-center">
+            <Col xs lg="8">
+              <LastfmDivCarousel links_photo={this.props.links_photo} />
+            </Col>
+          </Row>
+        </Jumbotron>
         <Row>
           <Col>
             <LastfmDivBiography biography_text={this.props.biography} />
@@ -100,9 +102,6 @@ export class LastfmDivBiography extends Component {
       <Jumbotron>
         <h1>Biografia dell'artista</h1>
         <p>{text}</p>
-        <p>
-          <Button variant="primary">Learn more</Button>
-        </p>
       </Jumbotron>
     );
   }

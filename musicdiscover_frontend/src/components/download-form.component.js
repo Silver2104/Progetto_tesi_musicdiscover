@@ -83,13 +83,13 @@ export default class BandCampPage extends Component {
                     required
                     className="mb-2"
                     id="inlineFormInput"
-                    placeholder="Link bandcamp"
+                    placeholder="Nome artista o link Bandcamp"
                     onChange={this.onChangeLink_download}
                   />
                 </Col>
                 <Col xs="auto">
                   <Button type="submit" className="mb-2">
-                    Submit
+                    Search
                   </Button>
                 </Col>
               </Form.Row>

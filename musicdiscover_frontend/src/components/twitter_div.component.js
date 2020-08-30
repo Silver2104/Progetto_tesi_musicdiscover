@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 
 export default class TwitterDivMain extends Component {
   createTweetsElements() {
+    console.log(this.props.ids);
     return this.props.ids.map((id) => {
       return <TwitterTweetEmbed tweetId={id} key={id} />;
     });

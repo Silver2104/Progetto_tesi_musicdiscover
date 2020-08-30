@@ -11,7 +11,7 @@ function get_tweets(account_name) {
           },
         };
         const response = await got(
-          `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${account_name}&count=5`,
+          `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${account_name}&count=9`,
           options
         );
         if (response != null) {
