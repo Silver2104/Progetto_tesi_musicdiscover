@@ -34,36 +34,28 @@ export default class BandCampPage extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    if (this.state.link_download.indexOf("http") == -1) {
-      console.log(this.state.link_download);
-      const link = {
-        download_link:
-          "https://" + this.state.link_download + ".bandcamp.com/album/",
-      };
-      console.log(link.download_link);
-      axios.post("http://localhost:3001/download/", link).then((res) => {
+    console.log(this.state.link_download);
+    const link = {
+      download_link:
+        "https://" + this.state.link_download + ".bandcamp.com/album/",
+    };
+    console.log(link.download_link);
+    axios
+      .post("http://localhost:3001/download/", link)
+      .then((res) => {
         this.setState({
           bandcamp_info: res.data,
         });
         this.hideComponent();
-      });
-      this.setState({
-        download_link: "",
-      });
-    } else {
-      const link = {
-        download_link: this.state.link_download,
-      };
-      axios.post("http://localhost:3001/download/", link).then((res) => {
         this.setState({
-          bandcamp_info: res.data,
+          download_link: "",
         });
-        this.hideComponent();
+      })
+      .catch(function (error) {
+        console.log(
+          "Errore nella funzione onSubmit nella pagina bandcamp: " + error
+        );
       });
-      this.setState({
-        download_link: "",
-      });
-    }
   }
 
   render() {
