@@ -61,7 +61,7 @@ export default class Twitter_page extends Component {
                     required
                     className="mb-2"
                     id="inlineFormInput"
-                    placeholder="Nome autore"
+                    placeholder="Nome artista"
                     onChange={this.onChangeLink_Twitter}
                   />
                 </Col>

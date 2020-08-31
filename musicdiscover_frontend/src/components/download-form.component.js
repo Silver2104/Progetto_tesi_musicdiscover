@@ -75,7 +75,7 @@ export default class BandCampPage extends Component {
                     required
                     className="mb-2"
                     id="inlineFormInput"
-                    placeholder="Nome artista o link Bandcamp"
+                    placeholder="Nome artista"
                     onChange={this.onChangeLink_download}
                   />
                 </Col>

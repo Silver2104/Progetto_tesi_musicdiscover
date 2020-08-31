@@ -59,7 +59,7 @@ export default class Lastfm_Page extends Component {
                     required
                     className="mb-2"
                     id="inlineFormInput"
-                    placeholder="Nome autore"
+                    placeholder="Nome artista"
                     onChange={this.onChangeLink_lastfm}
                   />
                 </Col>
@@ -82,6 +82,7 @@ export default class Lastfm_Page extends Component {
                   songs={this.state.lastfm_info.tracks.toptracks.track}
                   albums={this.state.lastfm_info.albums.topalbums.album}
                   similars={this.state.lastfm_info.info.artist.similar.artist}
+                  artist_name={this.state.artist_lastfm}
                 />
               )}
             </div>
