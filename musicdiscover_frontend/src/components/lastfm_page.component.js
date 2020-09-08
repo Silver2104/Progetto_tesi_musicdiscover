@@ -25,7 +25,6 @@ export default class Lastfm_Page extends Component {
     const link = {
       artist: this.state.artist_lastfm,
     };
-    console.log(link);
     axios.post("http://localhost:3001/lastfm/", link).then((res) => {
       this.setState({
         lastfm_info: res.data,
@@ -44,7 +43,6 @@ export default class Lastfm_Page extends Component {
 
   render() {
     const { isShowLastfmDiv } = this.state;
-    console.log(this.state.lastfm_info);
     return (
       <Container>
         <Row className="justify-content-md-center">

@@ -34,12 +34,10 @@ export default class BandCampPage extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.state.link_download);
     const link = {
       download_link:
         "https://" + this.state.link_download + ".bandcamp.com/album/",
     };
-    console.log(link.download_link);
     axios
       .post("http://localhost:3001/download/", link)
       .then((res) => {
@@ -60,7 +58,6 @@ export default class BandCampPage extends Component {
 
   render() {
     const { isShowBandcampDiv } = this.state;
-    console.log(this.state.bandcamp_info);
     return (
       <Container>
         <Row className="justify-content-md-center">

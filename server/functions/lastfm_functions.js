@@ -62,11 +62,15 @@ function get_links_photo(artist) {
   return new Promise((resolve, reject) => {
     (async () => {
       try {
+        console.log("SONO ENTRATO IN get_links_photo");
         let links_photo = [];
         const response = await got(
           `https://www.last.fm/music/${artist}/+images`
         );
-        var pattern_foto = new RegExp(/item">\s*<img\s*src="(.*)"/, "g");
+        var pattern_foto = new RegExp(
+          /item\s*?"\s*?>\s*?<img\s*?src="(.*)"/,
+          "g"
+        );
         const match_results = response.body.matchAll(pattern_foto);
         for (const match of match_results) {
           if (links_photo.length == 5) {
@@ -75,6 +79,7 @@ function get_links_photo(artist) {
           links_photo.push(match[1].replace("avatar170s", "770x0"));
         }
         if (response != null) {
+          console.log("SONO USCITO DA get_links_photo");
           resolve(links_photo);
         } else {
           reject(Error("Nessun testo ottenuto dal link"));

@@ -28,7 +28,6 @@ export class Album extends Component {
       ) +
       "track/" +
       e.replace(" ", "-");
-    console.log(link_canzone);
     axios
       .post(
         "http://localhost:3001/download/track",
@@ -39,6 +38,11 @@ export class Album extends Component {
       )
       .then((res) => {
         download(res.data, e + ".mp3");
+      })
+      .catch(function (error) {
+        console.log(
+          "Errore nella funzione onSelect nella pagina bandcamp: " + error
+        );
       });
   }
   render() {

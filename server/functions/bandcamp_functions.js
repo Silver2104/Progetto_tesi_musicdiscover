@@ -7,15 +7,10 @@ const bancamp_album_getsongs = (info) => {
         console.log("SONO IN bancamp_album_getsongs");
         for (const album of info.albums) {
           console.log(album);
-          //var canzoni = [];
-          console.log("SONO PRIMA DELLA CHIAMATA AL SITO BANDCAMP");
           const response = await got(album.link_album.replace(/\s/gi, ""));
-          console.log("SONO DOPO LA CHIAMATA AL SITO BANDCAMP");
           var PatternSongs = new RegExp(/itemprop="name">(.+)<\/s/, "g");
           var arraySongs = response.body.matchAll(PatternSongs);
-          console.log("SONO PRIMA DEL CICLO FOR");
           for (const canzone of arraySongs) {
-            console.log("SONO NEL CICLO FOR");
             album.canzoni.push(canzone[1]);
           }
           console.log("SONO USCITO DAL CICLO FOR");

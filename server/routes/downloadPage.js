@@ -21,6 +21,18 @@ router.route("/").post((req, res) => {
       );
     });
 });
+router.route("/").get((req, res) => {
+  get_page(req.query.download_link)
+    //Una volta preso il testo della pagina cerco con le espressioni regolari i link di download
+    .then((testo_pagina) => {
+      const info_bandcamp = bandcamp_getinfo(testo_pagina).then(
+        (info_bandcamp) => {
+          console.log(info_bandcamp);
+          res.send(info_bandcamp);
+        }
+      );
+    });
+});
 
 router.route("/track").post((req, res) => {
   get_page(req.body.link_song).then((testo_pagina) => {
@@ -44,7 +56,7 @@ const get_page = (link) => {
         }
         //=> '<!doctype html> ...'
       } catch (error) {
-        console.log(error.response.body);
+        console.log("Errore in get_page nell'API /download");
         //=> 'Internal server error ...'
       }
     })();
