@@ -15,6 +15,12 @@ router.route("/").post((req, res) => {
   });
 });
 
+router.route("/getTimeline").post((req, res) => {
+  asyncRunner(req.body.artist).then((info) => {
+    res.send(JSON.parse(info.info));
+  });
+});
+
 async function asyncRunner(artist) {
   try {
     const info = await get_tweets(artist);
