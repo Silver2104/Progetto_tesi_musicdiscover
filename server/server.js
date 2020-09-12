@@ -28,6 +28,7 @@ app.use("/twitter", TwitterPage);
 //Fine routes secondari
 
 // Avvio server sulla porta 3001
-app.listen(3001, function () {
+const port = normalizePort(process.env.PORT || '3000');
+app.listen(port, function () {
   console.log("Example app listening on port 3001!");
 });
