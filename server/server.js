@@ -2,6 +2,7 @@
 const cors = require("cors"); //Per settare il cros origin resource sharing
 require("dotenv").config(); // per avere tutte le variabili d'ambiente in un unico file nel progetto e non nel sistema
 const express = require("express"); // Web Framework
+const { PromisableRequest } = require("got/dist/source");
 //FINE IMPORT PACKAGES
 
 //INIZIALIZZAZIONE PACKAGES
@@ -42,7 +43,7 @@ function normalizePort(val) {
   return false;
 }
 // Avvio server sulla porta 3001
-const port = normalizePort(process.env.PORT || '3000');
+const port = 3001;
 app.listen(port, function () {
-  console.log("Example app listening on port 3001!");
+  console.log(port);
 });
